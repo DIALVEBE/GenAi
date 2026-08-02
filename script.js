@@ -1,9 +1,8 @@
-const VERSION = "20260802-1";
+const VERSION = "20260802-2";
 
 const ui = {
   en: {
     navTopics: "Topics",
-    navLab: "Lab Mode",
     courseLabel: "Course notebook",
     heroTitle: "Generative AI",
     heroText:
@@ -24,17 +23,6 @@ const ui = {
     topicsLabel: "Course modules",
     topicsTitle: "Student notebook",
     indexTitle: "Jump to",
-    labLabel: "Practice frame",
-    labTitle: "How to study each module",
-    lab1Title: "Read for the mechanism",
-    lab1Text:
-      "Ask what changes inside the model, what data it learns from, and what output it is trained to produce.",
-    lab2Title: "Sketch the data flow",
-    lab2Text:
-      "Turn every architecture into arrows: input, representation, loss, update, and generated result.",
-    lab3Title: "Test with examples",
-    lab3Text:
-      "Use small prompts, images, or toy datasets before trusting a larger generative system.",
     footerText: "Generative AI course notebook",
     labels: {
       keyIdeas: "Key ideas",
@@ -46,7 +34,6 @@ const ui = {
   },
   es: {
     navTopics: "Temas",
-    navLab: "Modo laboratorio",
     courseLabel: "Cuaderno del curso",
     heroTitle: "IA Generativa",
     heroText:
@@ -67,17 +54,6 @@ const ui = {
     topicsLabel: "Módulos del curso",
     topicsTitle: "Cuaderno del estudiante",
     indexTitle: "Ir a",
-    labLabel: "Marco de práctica",
-    labTitle: "Cómo estudiar cada módulo",
-    lab1Title: "Lee buscando el mecanismo",
-    lab1Text:
-      "Pregunta qué cambia dentro del modelo, de qué datos aprende y qué salida se entrena para producir.",
-    lab2Title: "Dibuja el flujo de datos",
-    lab2Text:
-      "Convierte cada arquitectura en flechas: entrada, representación, pérdida, actualización y resultado generado.",
-    lab3Title: "Prueba con ejemplos",
-    lab3Text:
-      "Usa prompts, imágenes o conjuntos de datos pequeños antes de confiar en un sistema generativo más grande.",
     footerText: "Cuaderno del curso de IA Generativa",
     labels: {
       keyIdeas: "Ideas clave",

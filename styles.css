@@ -224,8 +224,7 @@ h3 {
 }
 
 .study-map,
-.topics-shell,
-.lab-band {
+.topics-shell {
   padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 5vw, 5rem);
 }
 
@@ -242,7 +241,6 @@ h3 {
 }
 
 .map-grid,
-.lab-grid,
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -250,7 +248,6 @@ h3 {
 }
 
 .map-grid article,
-.lab-grid article,
 .topic-card,
 .detail-card,
 .visual-card {
@@ -259,20 +256,17 @@ h3 {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
 }
 
-.map-grid article,
-.lab-grid article {
+.map-grid article {
   min-height: 10rem;
   padding: 1.2rem;
 }
 
 .map-grid strong,
-.lab-grid span,
 .detail-card strong {
   color: var(--cyan-2);
 }
 
 .map-grid p,
-.lab-grid p,
 .topic-summary,
 .topic-deep,
 .detail-card p {
@@ -448,21 +442,6 @@ h3 {
   margin-top: 0.4rem;
 }
 
-.lab-band {
-  background: linear-gradient(180deg, rgba(0, 240, 255, 0.05), rgba(255, 57, 212, 0.04));
-}
-
-.lab-grid article {
-  position: relative;
-}
-
-.lab-grid span {
-  display: block;
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
-  font-weight: 900;
-}
-
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -530,7 +509,6 @@ h3 {
 
 @media (max-width: 720px) {
   .map-grid,
-  .lab-grid,
   .detail-grid {
     grid-template-columns: 1fr;
   }
