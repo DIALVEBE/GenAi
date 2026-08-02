@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Generative AI bilingual student notebook with explanations, visuals, study checks, and practical examples."
+    />
+    <title>Generative AI | Course Notebook</title>
+    <link rel="preload" href="assets/genai-hero.png" as="image" />
+    <link rel="stylesheet" href="styles.css?v=20260802-1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Generative AI home">
+        <span class="brand-mark">GAI</span>
+        <span>Generative AI</span>
+      </a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="#topics" data-i18n="navTopics">Topics</a>
+        <a href="#lab" data-i18n="navLab">Lab Mode</a>
+        <a
+          class="repo-link"
+          href="https://github.com/DIALVEBE/GenAi"
+          rel="noreferrer"
+        >
+          <span aria-hidden="true">◎</span>
+          GitHub
+        </a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language switch">
+        <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="courseLabel">Course notebook</p>
+          <h1 data-i18n="heroTitle">Generative AI</h1>
+          <p class="hero-text" data-i18n="heroText">
+            A student-facing path through neural networks, modern generative
+            models, language systems, and responsible project work.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#topics" data-i18n="startLearning">Start learning</a>
+            <a class="secondary-action" href="#study-map" data-i18n="viewMap">View study map</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Generative AI neon circuit visual"></div>
+      </section>
+
+      <section class="study-map" id="study-map" aria-labelledby="study-map-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="mapLabel">Notebook route</p>
+          <h2 id="study-map-title" data-i18n="mapTitle">From foundations to responsible generative projects</h2>
+        </div>
+        <div class="map-grid">
+          <article>
+            <strong data-i18n="map1Title">Model foundations</strong>
+            <p data-i18n="map1Text">AI, ML, perceptrons, activation functions, optimization, and first neural networks.</p>
+          </article>
+          <article>
+            <strong data-i18n="map2Title">Architectures</strong>
+            <p data-i18n="map2Text">CNNs, RNNs, autoencoders, VAEs, GANs, and transformer-based language models.</p>
+          </article>
+          <article>
+            <strong data-i18n="map3Title">Practice and judgment</strong>
+            <p data-i18n="map3Text">Examples, mental models, checks for understanding, bias analysis, and project reflection.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="topics-shell" id="topics" aria-labelledby="topics-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="topicsLabel">Course modules</p>
+          <h2 id="topics-title" data-i18n="topicsTitle">Student notebook</h2>
+        </div>
+        <div class="topic-layout">
+          <aside class="topic-index" aria-label="Topic index">
+            <div class="index-title" data-i18n="indexTitle">Jump to</div>
+            <div id="topicIndex"></div>
+          </aside>
+          <div class="topics" id="topicList"></div>
+        </div>
+      </section>
+
+      <section class="lab-band" id="lab" aria-labelledby="lab-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="labLabel">Practice frame</p>
+          <h2 id="lab-title" data-i18n="labTitle">How to study each module</h2>
+        </div>
+        <div class="lab-grid">
+          <article>
+            <span>01</span>
+            <h3 data-i18n="lab1Title">Read for the mechanism</h3>
+            <p data-i18n="lab1Text">Ask what changes inside the model, what data it learns from, and what output it is trained to produce.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-i18n="lab2Title">Sketch the data flow</h3>
+            <p data-i18n="lab2Text">Turn every architecture into arrows: input, representation, loss, update, and generated result.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-i18n="lab3Title">Test with examples</h3>
+            <p data-i18n="lab3Text">Use small prompts, images, or toy datasets before trusting a larger generative system.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footerText">Generative AI course notebook</span>
+      <a href="https://github.com/DIALVEBE/GenAi">github.com/DIALVEBE/GenAi</a>
+    </footer>
+
+    <script src="script.js?v=20260802-1"></script>
+  </body>
+</html>
