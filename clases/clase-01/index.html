@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Class 01 notebook: basic concepts of Artificial Intelligence and Machine Learning."
+    />
+    <title>Class 01 | AI and Machine Learning</title>
+    <link rel="stylesheet" href="../../styles.css?v=20260805-1" />
+    <link rel="stylesheet" href="clase-01.css?v=20260805-1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Generative AI home">
+        <span class="brand-mark">GAI</span>
+        <span>Generative AI</span>
+      </a>
+      <nav class="top-nav" aria-label="Class navigation">
+        <a href="../../" data-i18n="navHome">Home</a>
+        <a href="#concepts" data-i18n="navConcepts">Concepts</a>
+        <a href="#lab" data-i18n="navLab">Lab</a>
+        <a href="#check" data-i18n="navCheck">Check</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language switch">
+        <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main id="top" class="class-page">
+      <section class="class-hero">
+        <div class="class-hero-copy">
+          <p class="eyebrow" data-i18n="classLabel">Class 01</p>
+          <h1 data-i18n="heroTitle">AI and Machine Learning</h1>
+          <p class="hero-text" data-i18n="heroText">
+            Learn how intelligent systems move from programmed rules to patterns adjusted from data.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#concepts" data-i18n="startClass">Start class</a>
+            <a class="secondary-action" href="#lab" data-i18n="openLab">Open lab</a>
+          </div>
+        </div>
+        <div class="neural-visual" aria-hidden="true">
+          <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+          <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+        </div>
+      </section>
+
+      <section class="class-intro" aria-labelledby="outcome-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="outcomeLabel">Learning outcome</p>
+          <h2 id="outcome-title" data-i18n="outcomeTitle">What you should be able to explain</h2>
+        </div>
+        <div class="learning-grid">
+          <article><strong data-i18n="outcome1Title">Field map</strong><p data-i18n="outcome1Text">Distinguish Artificial Intelligence, Machine Learning, and Deep Learning.</p></article>
+          <article><strong data-i18n="outcome2Title">Problem framing</strong><p data-i18n="outcome2Text">Recognize when a problem can be formulated as a learning problem.</p></article>
+          <article><strong data-i18n="outcome3Title">Data language</strong><p data-i18n="outcome3Text">Identify observations, features, labels, algorithms, models, training, and inference.</p></article>
+          <article><strong data-i18n="outcome4Title">Responsible use</strong><p data-i18n="outcome4Text">Explain why prediction supports decisions but does not replace human responsibility.</p></article>
+        </div>
+      </section>
+
+      <section class="topics-shell class-shell" id="concepts" aria-labelledby="concepts-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="conceptsLabel">Concepts</p>
+          <h2 id="concepts-title" data-i18n="conceptsTitle">Foundations for learning systems</h2>
+        </div>
+
+        <div class="class-layout">
+          <aside class="topic-index class-index" aria-label="Class index">
+            <div class="index-title" data-i18n="indexTitle">Jump to</div>
+            <div id="classIndex"></div>
+          </aside>
+
+          <div class="class-sections">
+            <article class="lesson-section" id="where-intelligence">
+              <div>
+                <span class="topic-number">01 / 10</span>
+                <h3 data-i18n="s1Title">Where is the intelligence?</h3>
+                <p data-i18n="s1Text1">An alarm set for 6:00 a.m. follows a fixed instruction. A traffic light that adapts to vehicle flow uses information from the environment. A system that estimates academic risk from historical records learns a pattern from data.</p>
+                <p data-i18n="s1Text2">In engineering, intelligence is evaluated through observable capabilities: perceiving information, representing a problem, reasoning about alternatives, learning from experience, making decisions, and acting toward an objective.</p>
+                <div class="callout" data-i18n="s1Callout">A system is not intelligent because it looks human. It is evaluated by the quality of its decisions within an objective and a context.</div>
+              </div>
+              <div class="diagram-panel perspective-diagram" aria-label="Four perspectives on AI">
+                <div class="center-node" data-i18n="dPerspectiveCenter">Intelligent system</div>
+                <div class="perspective-card cyan"><span>01</span><strong data-i18n="dPerspective1Title">Think like humans</strong><p data-i18n="dPerspective1Text">Model memory, reasoning, and learning.</p></div>
+                <div class="perspective-card pink"><span>02</span><strong data-i18n="dPerspective2Title">Think rationally</strong><p data-i18n="dPerspective2Text">Use logic to reach valid conclusions.</p></div>
+                <div class="perspective-card amber"><span>03</span><strong data-i18n="dPerspective3Title">Act like humans</strong><p data-i18n="dPerspective3Text">Produce behavior that is hard to distinguish from human behavior.</p></div>
+                <div class="perspective-card lime"><span>04</span><strong data-i18n="dPerspective4Title">Act rationally</strong><p data-i18n="dPerspective4Text">Choose actions that increase the chance of reaching a goal.</p></div>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="ai-definition">
+              <div>
+                <span class="topic-number">02 / 10</span>
+                <h3 data-i18n="s2Title">A practical definition of AI</h3>
+                <p data-i18n="s2Text1">An AI system is machine-based. It receives inputs, uses explicit or implicit objectives, infers how to produce outputs, and can influence physical or virtual environments through predictions, content, recommendations, or decisions.</p>
+                <p data-i18n="s2Text2">Automation is not automatically AI. A fixed macro can copy data without learning. AI appears when the system includes perception, reasoning, search, learning, or decision mechanisms beyond a rigid sequence of instructions.</p>
+              </div>
+              <div class="mini-grid">
+                <div><strong data-i18n="aiComp1Title">Inputs</strong><span data-i18n="aiComp1Text">Data, signals, images, text, measurements, or states.</span></div>
+                <div><strong data-i18n="aiComp2Title">Objectives</strong><span data-i18n="aiComp2Text">Criteria that orient behavior.</span></div>
+                <div><strong data-i18n="aiComp3Title">Inference</strong><span data-i18n="aiComp3Text">Transformation from input to estimate, class, recommendation, or action.</span></div>
+                <div><strong data-i18n="aiComp4Title">Influence</strong><span data-i18n="aiComp4Text">The output can guide a person or affect an environment.</span></div>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="rules-patterns">
+              <div>
+                <span class="topic-number">03 / 10</span>
+                <h3 data-i18n="s3Title">Rules programmed vs. patterns learned</h3>
+                <p data-i18n="s3Text1">In traditional programming, the rule is written by the developer. In Machine Learning, examples, a task, and a performance measure are supplied so an algorithm can adjust a model.</p>
+                <p data-i18n="s3Text2">Code does not disappear. It collects data, prepares it, selects algorithms, trains models, calculates metrics, and integrates predictions into applications. What changes is the origin of the decision function.</p>
+              </div>
+              <div class="diagram-panel compare-diagram">
+                <div class="compare-side pink">
+                  <h4 data-i18n="dCompare1Title">Traditional programming</h4>
+                  <div class="flow-row"><span data-i18n="dCompareData">Data</span><span data-i18n="dCompareRules">Rules</span><span data-i18n="dCompareResult">Result</span></div>
+                  <p data-i18n="dCompare1Text">The programmer explicitly writes the logic.</p>
+                </div>
+                <div class="compare-side cyan">
+                  <h4 data-i18n="dCompare2Title">Machine Learning</h4>
+                  <div class="flow-row"><span data-i18n="dCompareExamples">Examples</span><span data-i18n="dCompareAlgorithm">Algorithm</span><span data-i18n="dCompareModel">Model</span></div>
+                  <p data-i18n="dCompare2Text">The algorithm adjusts a function from examples.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="field-map">
+              <div>
+                <span class="topic-number">04 / 10</span>
+                <h3 data-i18n="s4Title">AI, Machine Learning, and Deep Learning</h3>
+                <p data-i18n="s4Text1">Artificial Intelligence is the broad field. Machine Learning is a subfield focused on improving behavior through data or experience. Deep Learning is a family of Machine Learning methods based on neural networks with many layers.</p>
+                <p data-i18n="s4Text2">This hierarchy avoids three common mistakes: not all AI uses ML, not all ML uses deep networks, and not every practical problem needs a neural network.</p>
+              </div>
+              <div class="diagram-panel nested-diagram">
+                <div class="bubble ai"><strong data-i18n="dMapAI">Artificial Intelligence</strong><span data-i18n="dMapAIText">Perceive, reason, plan, decide, and learn.</span></div>
+                <div class="bubble ml"><strong data-i18n="dMapML">Machine Learning</strong><span data-i18n="dMapMLText">Models adjusted with data.</span></div>
+                <div class="bubble dl"><strong data-i18n="dMapDL">Deep Learning</strong><span data-i18n="dMapDLText">Neural networks with multiple layers.</span></div>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="learning-definition">
+              <div>
+                <span class="topic-number">05 / 10</span>
+                <h3 data-i18n="s5Title">What does it mean for a machine to learn?</h3>
+                <p data-i18n="s5Text1">A program learns from experience when its performance on a task improves according to a defined measure. This forces three questions: what task should the system perform, what experience does it learn from, and how will improvement be measured?</p>
+                <p data-i18n="s5Text2">Learning does not mean understanding like a person. A model can capture a statistical regularity without knowing its cause.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th data-i18n="learnCol1">Element</th><th data-i18n="learnCol2">Question</th><th data-i18n="learnCol3">Academic example</th></tr></thead>
+                  <tbody>
+                    <tr><td data-i18n="taskLabel">Task</td><td data-i18n="taskQuestion">What should the system do?</td><td data-i18n="taskExample">Classify whether a student is at risk.</td></tr>
+                    <tr><td data-i18n="experienceLabel">Experience</td><td data-i18n="experienceQuestion">What information does it learn from?</td><td data-i18n="experienceExample">Historical attendance, grades, and final outcome.</td></tr>
+                    <tr><td data-i18n="performanceLabel">Performance</td><td data-i18n="performanceQuestion">How do we decide it improved?</td><td data-i18n="performanceExample">Recall, precision, and review of false alerts.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="data-language">
+              <div>
+                <span class="topic-number">06 / 10</span>
+                <h3 data-i18n="s6Title">The basic language of data</h3>
+                <p data-i18n="s6Text1">A dataset is a structured collection of examples. In a table, each row usually represents an observation and each column represents a variable.</p>
+                <p data-i18n="s6Text2">Features are the input variables used by the model. The label, objective, or target is the value to predict in supervised learning.</p>
+              </div>
+              <div class="diagram-panel dataset-diagram">
+                <table>
+                  <thead><tr><th>ID</th><th data-i18n="dDataAttendance">Attendance</th><th data-i18n="dDataTasks">Tasks</th><th data-i18n="dDataGrade">First grade</th><th data-i18n="dDataPassed">Passed</th></tr></thead>
+                  <tbody>
+                    <tr><td>E-01</td><td>95%</td><td>10</td><td>4.2</td><td data-i18n="yes">Yes</td></tr>
+                    <tr><td>E-02</td><td>60%</td><td>4</td><td>2.3</td><td data-i18n="no">No</td></tr>
+                    <tr><td>E-03</td><td>82%</td><td>8</td><td>3.5</td><td data-i18n="yes">Yes</td></tr>
+                  </tbody>
+                </table>
+                <div class="dataset-notes">
+                  <span data-i18n="dDataRow">Row = observation</span>
+                  <span data-i18n="dDataColumns">Columns = features</span>
+                  <span data-i18n="dDataTarget">Target = label</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="learning-types">
+              <div>
+                <span class="topic-number">07 / 10</span>
+                <h3 data-i18n="s7Title">Three ways to learn</h3>
+                <p data-i18n="s7Text1">Machine Learning paradigms differ by the signal available to adjust behavior. Supervised learning has known answers, unsupervised learning searches for structure, and reinforcement learning uses accumulated consequences.</p>
+              </div>
+              <div class="learning-types">
+                <article><span data-i18n="dType1Signal">Data + label</span><strong data-i18n="dType1Title">Supervised</strong><p data-i18n="dType1Text">Learns from examples that include the correct answer.</p><em data-i18n="dType1Examples">Classification, regression</em></article>
+                <article><span data-i18n="dType2Signal">Only data</span><strong data-i18n="dType2Title">Unsupervised</strong><p data-i18n="dType2Text">Finds structure without a predefined answer.</p><em data-i18n="dType2Examples">Clustering, anomaly detection</em></article>
+                <article><span data-i18n="dType3Signal">Experience</span><strong data-i18n="dType3Title">Reinforcement</strong><p data-i18n="dType3Text">Acts, receives rewards or penalties, and learns a policy.</p><em data-i18n="dType3Examples">Agent, action, reward</em></article>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="lifecycle">
+              <div>
+                <span class="topic-number">08 / 10</span>
+                <h3 data-i18n="s8Title">The life cycle of a model</h3>
+                <p data-i18n="s8Text1">A Machine Learning project does not start by selecting an algorithm. It starts by defining a decision and continues after the model is used.</p>
+                <p data-i18n="s8Text2">A valuable model is not simply the one with the highest number in a lab. It is the one that improves a real decision without creating unacceptable harm.</p>
+              </div>
+              <div class="lifecycle-strip">
+                <span data-i18n="life1">Problem</span><span data-i18n="life2">Data</span><span data-i18n="life3">Prepare</span><span data-i18n="life4">Train</span><span data-i18n="life5">Evaluate</span><span data-i18n="life6">Use</span><span data-i18n="life7">Monitor</span>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="evaluation">
+              <div>
+                <span class="topic-number">09 / 10</span>
+                <h3 data-i18n="s9Title">Training, validation, testing, and metrics</h3>
+                <p data-i18n="s9Text1">Evaluating with the same data used for training gives an optimistic view. Training adjusts parameters, validation compares configurations, and testing estimates final performance once design decisions are closed.</p>
+                <p data-i18n="s9Text2">Metrics must match the impact of the decision. In academic risk, missing a real case can be more costly than creating an extra alert.</p>
+              </div>
+              <div class="metric-grid">
+                <div><strong>Accuracy</strong><span data-i18n="metricAccuracy">Overall proportion of correct predictions.</span></div>
+                <div><strong data-i18n="metricPrecisionTitle">Precision</strong><span data-i18n="metricPrecision">Of all alerts, how many were real?</span></div>
+                <div><strong>Recall</strong><span data-i18n="metricRecall">Of all real risk cases, how many were detected?</span></div>
+                <div><strong>MAE</strong><span data-i18n="metricMae">Average absolute error for numeric predictions.</span></div>
+              </div>
+            </article>
+
+            <article class="lesson-section" id="generalization">
+              <div>
+                <span class="topic-number">10 / 10</span>
+                <h3 data-i18n="s10Title">Generalization and responsible decisions</h3>
+                <p data-i18n="s10Text1">Generalizing means applying a learned pattern to new cases from the same problem. Underfitting is too simple, overfitting memorizes noise, and good fit captures the pattern that remains useful outside training data.</p>
+                <p data-i18n="s10Text2">A prediction is evidence for a decision, not an automatic sentence. Responsible use combines technical quality, human review, privacy, transparency, and institutional accountability.</p>
+              </div>
+              <div class="generalization-panel">
+                <div class="fit-card amber"><svg viewBox="0 0 220 120" aria-hidden="true"><path d="M8 75 C45 10 85 10 118 75 S185 140 212 58" /><line x1="10" y1="35" x2="210" y2="95" /></svg><strong data-i18n="fitUnder">Underfitting</strong><span data-i18n="fitUnderText">Too simple</span></div>
+                <div class="fit-card lime"><svg viewBox="0 0 220 120" aria-hidden="true"><path d="M8 75 C45 10 85 10 118 75 S185 140 212 58" /><path class="solid" d="M10 76 C45 18 88 18 120 76 S183 130 210 58" /></svg><strong data-i18n="fitGood">Good fit</strong><span data-i18n="fitGoodText">Captures the pattern</span></div>
+                <div class="fit-card pink"><svg viewBox="0 0 220 120" aria-hidden="true"><path d="M8 75 C45 10 85 10 118 75 S185 140 212 58" /><path class="solid wild" d="M10 76 C25 15 38 110 52 34 S83 80 100 30 S136 130 160 70 S190 10 210 92" /></svg><strong data-i18n="fitOver">Overfitting</strong><span data-i18n="fitOverText">Memorizes noise</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="topics-shell class-shell" id="lab" aria-labelledby="lab-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="labLabel">Mini lab</p>
+          <h2 id="lab-title" data-i18n="labTitle">From dataset to prediction</h2>
+        </div>
+        <div class="lab-grid">
+          <div>
+            <p data-i18n="labIntro">This artificial example shows the flow of a supervised classification task. It is useful for learning the vocabulary, but it is not evidence for a real academic decision.</p>
+            <ol>
+              <li data-i18n="labStep1">Create a small dataset.</li>
+              <li data-i18n="labStep2">Separate features and target.</li>
+              <li data-i18n="labStep3">Split training and test data.</li>
+              <li data-i18n="labStep4">Train a decision tree.</li>
+              <li data-i18n="labStep5">Evaluate and predict a new case.</li>
+            </ol>
+          </div>
+          <div class="code-card">
+            <pre data-lang-only="en"><code>import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+df = pd.DataFrame({
+    "attendance": [95, 60, 82, 55, 90, 72, 88, 64],
+    "tasks": [10, 4, 8, 5, 9, 6, 9, 5],
+    "first_grade": [4.2, 2.3, 3.5, 2.8, 4.0, 3.0, 3.9, 2.7],
+    "passed": [1, 0, 1, 0, 1, 0, 1, 0],
+})
+
+X = df[["attendance", "tasks", "first_grade"]]
+y = df["passed"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25, random_state=42, stratify=y
+)
+
+model = DecisionTreeClassifier(max_depth=3, random_state=42)
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, predictions))
+print(confusion_matrix(y_test, predictions))</code></pre>
+            <pre data-lang-only="es"><code>import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+df = pd.DataFrame({
+    "asistencia": [95, 60, 82, 55, 90, 72, 88, 64],
+    "tareas": [10, 4, 8, 5, 9, 6, 9, 5],
+    "primer_corte": [4.2, 2.3, 3.5, 2.8, 4.0, 3.0, 3.9, 2.7],
+    "aprobo": [1, 0, 1, 0, 1, 0, 1, 0],
+})
+
+X = df[["asistencia", "tareas", "primer_corte"]]
+y = df["aprobo"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25, random_state=42, stratify=y
+)
+
+modelo = DecisionTreeClassifier(max_depth=3, random_state=42)
+modelo.fit(X_train, y_train)
+
+predicciones = modelo.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, predicciones))
+print(confusion_matrix(y_test, predicciones))</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="topics-shell class-shell" id="check" aria-labelledby="check-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="checkLabel">Study check</p>
+          <h2 id="check-title" data-i18n="checkTitle">Apply the concepts</h2>
+        </div>
+        <div class="check-card">
+          <p data-i18n="checkCase">A company wants to reduce server failures. It has temperature, CPU use, memory use, disk errors, and records indicating whether a failure occurred during the next 24 hours.</p>
+          <ol>
+            <li data-i18n="q1">What is the observation unit?</li>
+            <li data-i18n="q2">Which variables are features?</li>
+            <li data-i18n="q3">What is the label?</li>
+            <li data-i18n="q4">Is this supervised, unsupervised, or reinforcement learning?</li>
+            <li data-i18n="q5">Is the output classification or regression?</li>
+            <li data-i18n="q6">What information could create data leakage?</li>
+            <li data-i18n="q7">Which error would be more costly: a false alarm or missing a real failure?</li>
+            <li data-i18n="q8">How could the prediction be used without becoming an automatic decision?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="topics-shell class-shell references" aria-labelledby="references-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="referencesLabel">References</p>
+          <h2 id="references-title" data-i18n="referencesTitle">Recommended sources</h2>
+        </div>
+        <ul>
+          <li>Bishop, C. M., & Bishop, H. (2024). <em>Deep Learning: Foundations and Concepts</em>. Springer.</li>
+          <li>Géron, A. (2022). <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</em>. O'Reilly Media.</li>
+          <li>Google for Developers. <em>Machine Learning Crash Course</em>.</li>
+          <li>Mitchell, T. M. (1997). <em>Machine Learning</em>. McGraw-Hill.</li>
+          <li>Murphy, K. P. (2022). <em>Probabilistic Machine Learning: An Introduction</em>. MIT Press.</li>
+          <li>NIST. (2023). <em>Artificial Intelligence Risk Management Framework 1.0</em>.</li>
+          <li>OECD. (2024). <em>Explanatory memorandum on the updated OECD definition of an AI system</em>.</li>
+          <li>Russell, S., & Norvig, P. (2021). <em>Artificial Intelligence: A Modern Approach</em>. Pearson.</li>
+          <li>UNESCO. (2021). <em>Recommendation on the Ethics of Artificial Intelligence</em>.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footerText">Generative AI course notebook</span>
+      <a href="../../">dialvebe.github.io/GenAi</a>
+    </footer>
+
+    <script src="clase-01.js?v=20260805-1"></script>
+  </body>
+</html>
