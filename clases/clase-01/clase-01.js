@@ -1,4 +1,4 @@
-const VERSION = "20260805-1";
+const VERSION = "20260805-3";
 
 const sections = [
   ["where-intelligence", "Where is the intelligence?", "¿Dónde está la inteligencia?"],
@@ -80,10 +80,13 @@ const text = {
     s4Text2: "This hierarchy avoids three common mistakes: not all AI uses ML, not all ML uses deep networks, and not every practical problem needs a neural network.",
     dMapAI: "Artificial Intelligence",
     dMapAIText: "Perceive, reason, plan, decide, and learn.",
+    dMapScope1: "Broad field",
     dMapML: "Machine Learning",
     dMapMLText: "Models adjusted with data.",
+    dMapScope2: "Subfield",
     dMapDL: "Deep Learning",
     dMapDLText: "Neural networks with multiple layers.",
+    dMapScope3: "Family of methods",
     s5Title: "What does it mean for a machine to learn?",
     s5Text1: "A program learns from experience when its performance on a task improves according to a defined measure. This forces three questions: what task should the system perform, what experience does it learn from, and how will improvement be measured?",
     s5Text2: "Learning does not mean understanding like a person. A model can capture a statistical regularity without knowing its cause.",
@@ -241,10 +244,13 @@ const text = {
     s4Text2: "Esta jerarquía evita tres errores frecuentes: no toda IA usa ML, no todo ML usa redes profundas y no todo problema práctico necesita una red neuronal.",
     dMapAI: "Inteligencia Artificial",
     dMapAIText: "Percibir, razonar, planificar, decidir y aprender.",
+    dMapScope1: "Campo amplio",
     dMapML: "Machine Learning",
     dMapMLText: "Modelos ajustados con datos.",
+    dMapScope2: "Subcampo",
     dMapDL: "Deep Learning",
     dMapDLText: "Redes neuronales con múltiples capas.",
+    dMapScope3: "Familia de métodos",
     s5Title: "¿Qué significa que una máquina aprenda?",
     s5Text1: "Un programa aprende de la experiencia cuando su desempeño en una tarea mejora según una medida definida. Esto obliga a responder tres preguntas: qué tarea debe realizar el sistema, de qué experiencia aprende y cómo se medirá la mejora.",
     s5Text2: "Aprender no significa comprender como una persona. Un modelo puede capturar una regularidad estadística sin conocer su causa.",
