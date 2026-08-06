@@ -1,0 +1,577 @@
+.class-page {
+  --class-band: rgba(8, 4, 24, 0.74);
+}
+
+.class-hero {
+  min-height: calc(100svh - 4.1rem);
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(20rem, 1fr);
+  gap: clamp(1.5rem, 5vw, 4.5rem);
+  align-items: center;
+  padding: clamp(3rem, 7vw, 6.5rem) clamp(1rem, 5vw, 5rem) 3rem;
+}
+
+.class-hero h1 {
+  max-width: 12ch;
+}
+
+.class-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.neural-visual {
+  position: relative;
+  min-height: clamp(20rem, 44vw, 39rem);
+  overflow: hidden;
+  border: 1px solid rgba(0, 240, 255, 0.24);
+  background:
+    linear-gradient(135deg, rgba(0, 240, 255, 0.08), rgba(255, 57, 212, 0.08)),
+    rgba(5, 10, 28, 0.74);
+  box-shadow: var(--shadow), inset 0 0 60px rgba(0, 240, 255, 0.12);
+  clip-path: polygon(8% 0, 100% 0, 100% 90%, 88% 100%, 0 100%, 0 12%);
+}
+
+.neural-visual::before,
+.neural-visual::after {
+  position: absolute;
+  inset: 15% 8%;
+  content: "";
+  background:
+    linear-gradient(28deg, transparent 7%, var(--cyan) 7.2%, transparent 7.8%),
+    linear-gradient(150deg, transparent 29%, rgba(255, 57, 212, 0.9) 29.2%, transparent 29.8%),
+    linear-gradient(64deg, transparent 58%, rgba(185, 255, 99, 0.8) 58.2%, transparent 58.8%);
+  opacity: 0.78;
+}
+
+.neural-visual::after {
+  inset: 22% 18%;
+  transform: rotate(18deg);
+  opacity: 0.42;
+}
+
+.neural-visual span {
+  position: absolute;
+  width: 0.82rem;
+  height: 0.82rem;
+  border-radius: 999px;
+  background: var(--cyan);
+  font-size: 0;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.72);
+}
+
+.neural-visual span:nth-child(2n) {
+  background: var(--pink);
+  box-shadow: 0 0 18px rgba(255, 57, 212, 0.72);
+}
+
+.neural-visual span:nth-child(1) { left: 14%; top: 18%; }
+.neural-visual span:nth-child(2) { left: 39%; top: 24%; }
+.neural-visual span:nth-child(3) { left: 68%; top: 14%; }
+.neural-visual span:nth-child(4) { left: 80%; top: 40%; }
+.neural-visual span:nth-child(5) { left: 22%; top: 48%; }
+.neural-visual span:nth-child(6) { left: 52%; top: 52%; }
+.neural-visual span:nth-child(7) { left: 16%; top: 74%; }
+.neural-visual span:nth-child(8) { left: 38%; top: 82%; }
+.neural-visual span:nth-child(9) { left: 62%; top: 76%; }
+.neural-visual span:nth-child(10) { left: 86%; top: 70%; }
+
+.class-intro,
+.class-shell {
+  padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 5vw, 5rem);
+}
+
+.learning-grid,
+.mini-grid,
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.learning-grid article,
+.mini-grid div,
+.metric-grid div,
+.check-card,
+.code-card,
+.lesson-section {
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  background: linear-gradient(145deg, rgba(18, 7, 48, 0.86), rgba(6, 20, 40, 0.72));
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.learning-grid article,
+.mini-grid div,
+.metric-grid div,
+.check-card,
+.code-card {
+  padding: 1rem;
+}
+
+.learning-grid strong,
+.mini-grid strong,
+.metric-grid strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--cyan-2);
+}
+
+.learning-grid p,
+.mini-grid span,
+.metric-grid span,
+.lesson-section p,
+.check-card,
+.references,
+.lab-grid {
+  color: var(--muted);
+}
+
+.class-layout {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.class-index {
+  top: 5.5rem;
+}
+
+.class-sections {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.lesson-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(18rem, 0.7fr);
+  gap: 1.2rem;
+  align-items: center;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  overflow: hidden;
+}
+
+.lesson-section h3 {
+  margin: 0.35rem 0 0.85rem;
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+}
+
+.callout {
+  margin-top: 1rem;
+  padding: 0.95rem;
+  border-left: 0.22rem solid var(--amber);
+  color: var(--text);
+  background: rgba(255, 209, 102, 0.08);
+}
+
+.diagram-panel {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(255, 57, 212, 0.22);
+  background: rgba(5, 10, 28, 0.78);
+}
+
+.perspective-diagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.center-node {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 15rem);
+  padding: 1rem;
+  border: 0.18rem solid var(--cyan);
+  border-radius: 999px;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.perspective-card {
+  min-height: 10rem;
+  padding: 0.9rem;
+  border: 1px solid currentColor;
+}
+
+.perspective-card span,
+.perspective-card strong {
+  display: block;
+  font-weight: 900;
+}
+
+.perspective-card span {
+  margin-bottom: 0.35rem;
+}
+
+.cyan { color: var(--cyan-2); }
+.pink { color: var(--pink); }
+.amber { color: var(--amber); }
+.lime { color: var(--lime); }
+
+.perspective-card p,
+.compare-side p,
+.learning-types p,
+.learning-types em,
+.dataset-notes,
+.fit-card span {
+  color: var(--muted);
+}
+
+.mini-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.compare-diagram {
+  display: grid;
+  gap: 1rem;
+}
+
+.compare-side {
+  padding: 1rem;
+  border: 1px solid currentColor;
+}
+
+.compare-side h4 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.flow-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.flow-row span {
+  min-height: 3.2rem;
+  display: grid;
+  place-items: center;
+  padding: 0.45rem;
+  color: var(--text);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.nested-diagram {
+  position: relative;
+  min-height: 22rem;
+}
+
+.bubble {
+  position: absolute;
+  inset: 1rem;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 2px solid rgba(246, 247, 255, 0.76);
+  border-radius: 999px;
+  text-align: center;
+}
+
+.bubble strong {
+  color: white;
+  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+  text-transform: uppercase;
+}
+
+.bubble span {
+  max-width: 25rem;
+  color: var(--muted);
+}
+
+.bubble.ml {
+  inset: 5.4rem 2.3rem 1.4rem;
+  border-color: var(--cyan-2);
+  background: rgba(0, 240, 255, 0.16);
+}
+
+.bubble.dl {
+  inset: 10.7rem 6.6rem 2rem;
+  border-color: var(--pink);
+  background: rgba(255, 57, 212, 0.2);
+}
+
+.table-wrap,
+.dataset-diagram {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  color: var(--text);
+}
+
+th,
+td {
+  padding: 0.72rem;
+  border: 1px solid rgba(111, 252, 255, 0.22);
+  text-align: left;
+}
+
+th {
+  color: var(--cyan-2);
+  background: rgba(0, 240, 255, 0.08);
+}
+
+.dataset-diagram table {
+  min-width: 31rem;
+}
+
+.dataset-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+
+.dataset-notes span {
+  padding: 0.65rem;
+  border: 1px solid rgba(255, 57, 212, 0.24);
+  text-align: center;
+}
+
+.learning-types {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.learning-types article {
+  min-height: 16rem;
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+  padding: 1rem;
+  border: 1px solid currentColor;
+}
+
+.learning-types span {
+  padding: 0.55rem;
+  color: #071025;
+  font-weight: 900;
+  text-align: center;
+  background: currentColor;
+}
+
+.learning-types strong {
+  color: var(--text);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.learning-types em {
+  font-style: normal;
+  font-weight: 800;
+}
+
+.learning-types article:nth-child(1) { color: var(--cyan); }
+.learning-types article:nth-child(2) { color: var(--pink); }
+.learning-types article:nth-child(3) { color: var(--lime); }
+
+.lifecycle-strip {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+.lifecycle-strip span {
+  min-width: 8.5rem;
+  min-height: 5rem;
+  display: grid;
+  place-items: center;
+  border: 0.18rem solid var(--cyan);
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 900;
+  text-align: center;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.generalization-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.fit-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.8rem;
+  border: 1px solid currentColor;
+}
+
+.fit-card svg {
+  width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.fit-card svg path {
+  fill: none;
+  stroke: #9db0ca;
+  stroke-width: 3;
+  stroke-dasharray: 7 5;
+}
+
+.fit-card svg line,
+.fit-card svg .solid {
+  stroke: currentColor;
+  stroke-dasharray: none;
+  stroke-width: 5;
+}
+
+.fit-card svg .wild {
+  stroke-width: 4;
+}
+
+.fit-card strong {
+  color: var(--text);
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(20rem, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.lab-grid ol,
+.check-card ol {
+  padding-left: 1.2rem;
+}
+
+.lab-grid li + li,
+.check-card li + li,
+.references li + li {
+  margin-top: 0.45rem;
+}
+
+.code-card {
+  min-width: 0;
+  overflow: auto;
+}
+
+.code-card pre {
+  margin: 0;
+  overflow-x: auto;
+  color: var(--text);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+[data-lang-only] {
+  display: none;
+}
+
+[data-lang-only].is-visible {
+  display: block;
+}
+
+.check-card {
+  max-width: 58rem;
+}
+
+.references ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 980px) {
+  .class-hero,
+  .class-layout,
+  .lesson-section,
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-hero {
+    min-height: auto;
+    padding-top: 2.2rem;
+  }
+
+  .neural-visual {
+    order: -1;
+  }
+
+  .learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .class-index {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+
+  #classIndex {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  #classIndex a {
+    margin: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .learning-grid,
+  .mini-grid,
+  .metric-grid,
+  .perspective-diagram,
+  .learning-types,
+  .generalization-panel,
+  .dataset-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .class-hero h1 {
+    font-size: 2.58rem;
+  }
+
+  .neural-visual {
+    min-height: 17rem;
+  }
+
+  .lesson-section,
+  .diagram-panel {
+    padding: 1rem;
+  }
+
+  #classIndex {
+    grid-template-columns: 1fr;
+  }
+
+  .nested-diagram {
+    min-height: 30rem;
+  }
+
+  .bubble {
+    border-radius: 8px;
+  }
+
+  .bubble.ml {
+    inset: 9rem 1.7rem 1.7rem;
+  }
+
+  .bubble.dl {
+    inset: 18rem 3rem 2.5rem;
+  }
+
+  .lifecycle-strip span {
+    min-width: 7.2rem;
+  }
+}

@@ -1,8 +1,9 @@
-const VERSION = "20260802-2";
+const VERSION = "20260805-1";
 
 const ui = {
   en: {
     navTopics: "Topics",
+    navClasses: "Classes",
     courseLabel: "Course notebook",
     heroTitle: "Generative AI",
     heroText:
@@ -22,6 +23,12 @@ const ui = {
       "Examples, mental models, checks for understanding, bias analysis, and project reflection.",
     topicsLabel: "Course modules",
     topicsTitle: "Student notebook",
+    classesLabel: "Weekly notebook",
+    classesTitle: "Class pages",
+    class01Number: "Class 01",
+    class01Title: "Basic concepts of AI and Machine Learning",
+    class01Text:
+      "From programmed rules to learned patterns, datasets, evaluation, and responsible use.",
     indexTitle: "Jump to",
     footerText: "Generative AI course notebook",
     labels: {
@@ -34,6 +41,7 @@ const ui = {
   },
   es: {
     navTopics: "Temas",
+    navClasses: "Clases",
     courseLabel: "Cuaderno del curso",
     heroTitle: "IA Generativa",
     heroText:
@@ -53,6 +61,12 @@ const ui = {
       "Ejemplos, modelos mentales, comprobaciones de estudio, análisis de sesgos y reflexión de proyectos.",
     topicsLabel: "Módulos del curso",
     topicsTitle: "Cuaderno del estudiante",
+    classesLabel: "Cuaderno semanal",
+    classesTitle: "Páginas de clase",
+    class01Number: "Clase 01",
+    class01Title: "Conceptos básicos de IA y Machine Learning",
+    class01Text:
+      "De las reglas programadas a los patrones aprendidos, datasets, evaluación y uso responsable.",
     indexTitle: "Ir a",
     footerText: "Cuaderno del curso de IA Generativa",
     labels: {
@@ -78,12 +92,12 @@ const topics = [
       ideas: [
         "AI includes reasoning, perception, planning, and language tasks.",
         "Machine learning improves behavior from data instead of only hand-written rules.",
-        "Generative systems sample from learned representations, so prompts and data quality matter.",
+        "Generative systems sample from learned representations, so input instructions and data quality matter.",
       ],
       example:
         "A discriminative model may decide whether an image contains a cat. A generative model can create a new cat image or describe the scene in words.",
       mental:
-        "Think of ML as learning a map from examples. Generative AI learns a creative space and then navigates it from a prompt or condition.",
+        "Think of ML as learning a map from examples. Generative AI learns a creative space and then navigates it from an instruction or condition.",
       check:
         "Name one task where a generated output is useful and one task where a simple prediction is enough.",
       note:
@@ -98,12 +112,12 @@ const topics = [
       ideas: [
         "La IA incluye tareas de razonamiento, percepción, planeación y lenguaje.",
         "El aprendizaje automático mejora su comportamiento desde datos, no solo desde reglas escritas a mano.",
-        "Los sistemas generativos muestrean representaciones aprendidas, por eso importan el prompt y la calidad de los datos.",
+        "Los sistemas generativos muestrean representaciones aprendidas, por eso importan las instrucciones de entrada y la calidad de los datos.",
       ],
       example:
         "Un modelo discriminativo puede decidir si una imagen contiene un gato. Un modelo generativo puede crear una nueva imagen de un gato o describir la escena con palabras.",
       mental:
-        "Piensa en el aprendizaje automático como aprender un mapa desde ejemplos. La IA generativa aprende un espacio creativo y luego lo recorre desde un prompt o condición.",
+        "Piensa en el aprendizaje automático como aprender un mapa desde ejemplos. La IA generativa aprende un espacio creativo y luego lo recorre desde una instrucción o condición.",
       check:
         "Nombra una tarea donde una salida generada sea útil y otra donde baste una predicción simple.",
       note:
@@ -474,7 +488,7 @@ const topics = [
       ideas: [
         "The next-token objective can produce surprisingly broad behavior.",
         "Sampling settings influence creativity, consistency, and risk.",
-        "Prompt design is interface design: it shapes context, constraints, and evaluation.",
+        "Designing model instructions is interface design: it shapes context, constraints, and evaluation.",
       ],
       example:
         "A GPT model can draft a study plan, explain code, generate quiz questions, or transform notes into a structured summary.",
@@ -483,7 +497,7 @@ const topics = [
       check:
         "How would you reduce hallucination risk in a student-facing GPT application?",
       note:
-        "For reliable systems, combine prompts with retrieval, validation, evaluation sets, logging, and clear user-facing uncertainty.",
+        "For reliable systems, combine input instructions with retrieval, validation, evaluation sets, logging, and clear user-facing uncertainty.",
     },
     es: {
       title: "GPT y modelos de lenguaje generativos",
@@ -494,7 +508,7 @@ const topics = [
       ideas: [
         "El objetivo de predecir el siguiente token puede producir comportamientos sorprendentemente amplios.",
         "Los parámetros de muestreo influyen en creatividad, consistencia y riesgo.",
-        "Diseñar prompts es diseñar la interfaz: define contexto, restricciones y evaluación.",
+        "Diseñar instrucciones para el modelo es diseñar la interfaz: define contexto, restricciones y evaluación.",
       ],
       example:
         "Un modelo GPT puede redactar un plan de estudio, explicar código, generar preguntas de repaso o transformar notas en un resumen estructurado.",
@@ -503,7 +517,7 @@ const topics = [
       check:
         "¿Cómo reducirías el riesgo de alucinaciones en una aplicación GPT para estudiantes?",
       note:
-        "Para sistemas confiables, combina prompts con recuperación, validación, conjuntos de evaluación, registros e incertidumbre visible para el usuario.",
+        "Para sistemas confiables, combina instrucciones de entrada con recuperación, validación, conjuntos de evaluación, registros e incertidumbre visible para el usuario.",
     },
   },
   {
