@@ -257,45 +257,61 @@
   background: rgba(255, 255, 255, 0.055);
 }
 
-.nested-diagram {
-  position: relative;
-  min-height: 22rem;
-}
-
-.bubble {
-  position: absolute;
-  inset: 1rem;
+.hierarchy-diagram {
   display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 0.45rem;
-  padding: 1rem;
-  border: 2px solid rgba(246, 247, 255, 0.76);
-  border-radius: 999px;
-  text-align: center;
+  gap: 0.8rem;
 }
 
-.bubble strong {
-  color: white;
-  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+.hierarchy-layer {
+  position: relative;
+  display: grid;
+  gap: 0.4rem;
+  min-height: 5.6rem;
+  padding: 0.95rem 1rem 0.95rem 1.15rem;
+  border: 2px solid currentColor;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hierarchy-layer::before {
+  position: absolute;
+  top: 50%;
+  left: -1rem;
+  width: 0.72rem;
+  height: 2px;
+  content: "";
+  background: currentColor;
+}
+
+.hierarchy-layer:first-child::before {
+  display: none;
+}
+
+.hierarchy-layer strong {
+  color: var(--text);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.12;
   text-transform: uppercase;
 }
 
-.bubble span {
-  max-width: 25rem;
+.hierarchy-layer span {
   color: var(--muted);
 }
 
-.bubble.ml {
-  inset: 5.4rem 2.3rem 1.4rem;
-  border-color: var(--cyan-2);
-  background: rgba(0, 240, 255, 0.16);
+.hierarchy-layer.ai {
+  margin-right: 0;
+  color: rgba(246, 247, 255, 0.86);
 }
 
-.bubble.dl {
-  inset: 10.7rem 6.6rem 2rem;
-  border-color: var(--pink);
-  background: rgba(255, 57, 212, 0.2);
+.hierarchy-layer.ml {
+  margin-left: clamp(1rem, 8%, 2.5rem);
+  color: var(--cyan-2);
+  background: rgba(0, 240, 255, 0.1);
+}
+
+.hierarchy-layer.dl {
+  margin-left: clamp(2rem, 16%, 5rem);
+  color: var(--pink);
+  background: rgba(255, 57, 212, 0.1);
 }
 
 .table-wrap,
@@ -553,22 +569,6 @@ th {
 
   #classIndex {
     grid-template-columns: 1fr;
-  }
-
-  .nested-diagram {
-    min-height: 30rem;
-  }
-
-  .bubble {
-    border-radius: 8px;
-  }
-
-  .bubble.ml {
-    inset: 9rem 1.7rem 1.7rem;
-  }
-
-  .bubble.dl {
-    inset: 18rem 3rem 2.5rem;
   }
 
   .lifecycle-strip span {
