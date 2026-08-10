@@ -1,4 +1,4 @@
-const VERSION = "20260805-1";
+const VERSION = "20260809-1";
 
 const ui = {
   en: {
@@ -26,9 +26,9 @@ const ui = {
     classesLabel: "Weekly notebook",
     classesTitle: "Class pages",
     class01Number: "Class 01",
-    class01Title: "Basic concepts of AI and Machine Learning",
+    class01Title: "What does it mean for a machine to create?",
     class01Text:
-      "From programmed rules to learned patterns, datasets, evaluation, and responsible use.",
+      "A case-driven route through AI, Machine Learning, Generative AI, real applications, and risks.",
     indexTitle: "Jump to",
     footerText: "Generative AI course notebook",
     labels: {
@@ -64,9 +64,9 @@ const ui = {
     classesLabel: "Cuaderno semanal",
     classesTitle: "Páginas de clase",
     class01Number: "Clase 01",
-    class01Title: "Conceptos básicos de IA y Machine Learning",
+    class01Title: "¿Qué significa que una máquina pueda crear?",
     class01Text:
-      "De las reglas programadas a los patrones aprendidos, datasets, evaluación y uso responsable.",
+      "Una ruta basada en casos sobre IA, Machine Learning, IA Generativa, aplicaciones reales y riesgos.",
     indexTitle: "Ir a",
     footerText: "Cuaderno del curso de IA Generativa",
     labels: {
@@ -579,7 +579,7 @@ const topics = [
         "Evaluate quality, safety, usability, and impact together.",
       ],
       example:
-        "A study assistant can generate practice questions, but it should cite source material, mark uncertainty, and avoid replacing the student's own reasoning.",
+        "A study assistant can generate practice questions, but it should cite references, mark uncertainty, and avoid replacing the student's own reasoning.",
       mental:
         "A project is a loop: need, data, model, interface, evaluation, reflection, revision.",
       check:
