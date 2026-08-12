@@ -1,342 +1,475 @@
-const VERSION = "20260805-1";
+const VERSION = "20260809-1";
 
-const sections = [
-  ["where-intelligence", "Where is the intelligence?", "¿Dónde está la inteligencia?"],
-  ["ai-definition", "A practical definition of AI", "Una definición práctica de IA"],
-  ["rules-patterns", "Rules vs. learned patterns", "Reglas vs. patrones aprendidos"],
-  ["field-map", "AI, ML, and Deep Learning", "IA, ML y Deep Learning"],
-  ["learning-definition", "What learning means", "Qué significa aprender"],
-  ["data-language", "Data language", "Lenguaje de datos"],
-  ["learning-types", "Three ways to learn", "Tres formas de aprender"],
-  ["lifecycle", "Model life cycle", "Ciclo de vida del modelo"],
-  ["evaluation", "Evaluation and metrics", "Evaluación y métricas"],
-  ["generalization", "Generalization and responsibility", "Generalización y responsabilidad"],
-];
+const route = {
+  en: [
+    ["0-8 min", "Surprise", "We are hiring someone who does not exist.", "Curiosity"],
+    ["8-18 min", "Hypotheses", "What happened behind Laura?", "Activate prior ideas"],
+    ["18-35 min", "Classification", "AI / ML / Generative AI / Not sure", "Create conceptual tension"],
+    ["35-50 min", "Conceptualization I", "What is AI?", "Build foundations"],
+    ["50-53 min", "Pause", "Cognitive reset", "Recover attention"],
+    ["53-70 min", "Conceptualization II", "How does a machine learn?", "Understand ML"],
+    ["70-88 min", "Experience", "What changes with Generative AI?", "Build the concept"],
+    ["88-103 min", "Applications", "Real cases by domain", "Transfer"],
+    ["103-114 min", "Consolidation", "Forbidden words", "Active verbalization"],
+    ["114-120 min", "Exit", "Exit ticket", "Metacognition"],
+  ],
+  es: [
+    ["0-8 min", "Sorpresa", "Vamos a contratar a alguien que no existe.", "Curiosidad"],
+    ["8-18 min", "Hipótesis", "¿Qué ocurrió detrás de Laura?", "Activar ideas previas"],
+    ["18-35 min", "Clasificación", "IA / ML / IA Generativa / No estoy seguro", "Crear tensión conceptual"],
+    ["35-50 min", "Conceptualización I", "¿Qué es IA?", "Construir fundamentos"],
+    ["50-53 min", "Pausa", "Reseteo cognitivo", "Recuperar atención"],
+    ["53-70 min", "Conceptualización II", "¿Cómo aprende una máquina?", "Comprender ML"],
+    ["70-88 min", "Experiencia", "¿Qué cambia con IA Generativa?", "Construir el concepto"],
+    ["88-103 min", "Aplicaciones", "Casos reales por dominio", "Transferencia"],
+    ["103-114 min", "Consolidación", "Palabras prohibidas", "Verbalización activa"],
+    ["114-120 min", "Cierre", "Ticket de salida", "Metacognición"],
+  ],
+};
+
+const lessons = {
+  en: [
+    {
+      id: "laura",
+      time: "0-8 min",
+      title: "Laura looks real. Laura does not exist.",
+      body: [
+        "The class begins with a candidate profile: Laura Méndez, 24 years old, software developer. You see a professional photo, a short résumé, a voice sample, and a small piece of software work.",
+        "The first question is practical: would you interview her for a developer vacancy? The evidence looks familiar, credible, and human.",
+        "Then the central clue appears: there is no Laura. The person in the photo does not exist, the voice was not recorded by her, the résumé was produced, and the code was also produced.",
+      ],
+      callout: "The question is not “which tool did it?” The question is: if a machine can produce something we associate with human creation, what is it actually doing?",
+      visual: "candidate",
+    },
+    {
+      id: "hypotheses",
+      time: "8-18 min",
+      title: "Four hypotheses stay open",
+      body: [
+        "Before using definitions, build possible explanations. Maybe the system copied, searched, learned, invented, mixed examples, predicted, or followed instructions.",
+        "An early explanation does not have to be perfect. It becomes evidence for investigation: what do we need to know in order to explain the case better?",
+      ],
+      listTitle: "Questions to keep visible",
+      list: ["Did it copy?", "Did it search?", "Did it learn?", "Did it create?"],
+      visual: "questions",
+    },
+    {
+      id: "classification",
+      time: "18-35 min",
+      title: "Classify systems before receiving definitions",
+      body: [
+        "Now test your criteria. For each system, choose one option: AI, Machine Learning, Generative AI, or Not sure.",
+        "The important move is not guessing the label. The important move is explaining the criterion you used.",
+      ],
+      table: {
+        headers: ["System", "Initial discussion"],
+        rows: [
+          ["Calculator", "Not necessarily AI"],
+          ["Credit approval rules", "Depends on the design"],
+          ["Expert system based on rules", "AI, not necessarily ML"],
+          ["Spam filter trained with emails", "ML"],
+          ["Movie recommender", "ML"],
+          ["Face recognition", "ML / Deep Learning"],
+          ["House price prediction", "ML"],
+          ["ChatGPT drafting an email", "Generative AI"],
+          ["Image generator", "Generative AI"],
+          ["Assistant producing code", "Generative AI"],
+        ],
+      },
+      callout: "When the group disagrees, the disagreement reveals the real problem: we still need better criteria.",
+    },
+    {
+      id: "what-is-ai",
+      time: "35-50 min",
+      title: "What is Artificial Intelligence?",
+      body: [
+        "Artificial Intelligence is the field that studies and develops systems capable of performing tasks associated with capabilities we consider intelligent.",
+        "Those capabilities include perceiving, reasoning, deciding, solving problems, interpreting language, planning, learning, and acting.",
+        "AI is not the same as Machine Learning. A system can be considered AI without having learned from data, for example when it uses explicit rules, search, or knowledge representation.",
+      ],
+      visual: "aiMap",
+    },
+    {
+      id: "how-ml-learns",
+      time: "53-70 min",
+      title: "How does a machine learn?",
+      body: [
+        "Imagine 10,000 emails. Some are marked as spam and others as not spam. With traditional programming, you could write rules such as: if it contains “you won money,” mark it as suspicious.",
+        "But exceptions appear quickly. Machine Learning changes the strategy: instead of writing every rule, examples are used so an algorithm can discover useful patterns.",
+        "Training is the moment when the model adjusts its parameters using data. Inference is the moment when a trained model receives a new input and produces an output.",
+      ],
+      visual: "mlFlow",
+    },
+    {
+      id: "generative-ai",
+      time: "70-88 min",
+      title: "What changes with Generative AI?",
+      body: [
+        "A spam filter classifies an existing email. A price model predicts a number. A recommender orders options. A generative system produces a new instance of content.",
+        "Generative AI includes models capable of producing new content from patterns learned during training and from the conditions or instructions they receive.",
+        "It can produce text, images, audio, video, code, designs, or synthetic data. Generating is not the same as searching for information.",
+      ],
+      callout: "A generative system can produce a very convincing answer without that answer being true.",
+      visual: "genCompare",
+    },
+    {
+      id: "applications",
+      time: "88-103 min",
+      title: "Where is Generative AI already being used?",
+      body: [
+        "Move the Laura case to other domains. In each case, identify what the system could produce, which real need it could address, and what could go wrong.",
+        "A useful example does not start with “use AI.” It starts with a need, a type of output, and a risk that must be managed.",
+      ],
+      cards: [
+        ["Education", "Practice questions, feedback, summaries", "Wrong explanations or dependency"],
+        ["Software engineering", "Code, tests, prototypes", "Insecure or hard-to-maintain code"],
+        ["Marketing", "Campaign copy, images, variants", "Misleading or generic content"],
+        ["Medicine", "Draft reports, patient explanations", "Unsafe recommendations"],
+        ["Entertainment", "Characters, stories, game assets", "Copyright or originality issues"],
+        ["Design", "Mockups, media, style variations", "Low-quality or biased outputs"],
+      ],
+    },
+    {
+      id: "forbidden-words",
+      time: "103-114 min",
+      title: "Explain it without circular definitions",
+      body: [
+        "A strong explanation can survive restrictions. Try explaining the differences without relying on the most obvious words.",
+        "This forces you to use concepts such as data, patterns, training, model, prediction, output, examples, and criteria.",
+      ],
+      cards: [
+        ["Round 1", "Explain the difference between AI and Machine Learning.", "Forbidden: intelligence, learn, machine"],
+        ["Round 2", "Explain the difference between Machine Learning and Generative AI.", "Forbidden: generate, create, content"],
+      ],
+    },
+    {
+      id: "thread",
+      time: "Class thread",
+      title: "The narrative of the two hours",
+      body: [
+        "Laura seems real. Laura does not exist. How could she have been produced? Is every complex system AI? Does every AI system learn? What does it mean to learn from data?",
+        "Then the key distinction appears: classifying, predicting, and recommending are not the same as producing a new instance of content.",
+      ],
+      listTitle: "Final evidence",
+      list: [
+        "This belongs to AI because...",
+        "It uses Machine Learning because...",
+        "It is not Generative AI because its main objective is to classify or predict, not produce a new content instance.",
+      ],
+    },
+  ],
+  es: [
+    {
+      id: "laura",
+      time: "0-8 min",
+      title: "Laura parece real. Laura no existe.",
+      body: [
+        "La clase comienza con el perfil de una candidata: Laura Méndez, 24 años, desarrolladora de software. Ves una fotografía profesional, una hoja de vida breve, una muestra de voz y una pequeña evidencia de trabajo en software.",
+        "La primera pregunta es práctica: ¿la entrevistarías para una vacante de desarrollo? La evidencia parece familiar, creíble y humana.",
+        "Luego aparece la pista central: Laura no existe. La persona de la fotografía no existe, la voz no fue grabada por ella, la hoja de vida fue producida y el código también fue producido.",
+      ],
+      callout: "La pregunta no es “¿qué herramienta lo hizo?”. La pregunta es: si una máquina puede producir algo que asociamos con la creación humana, ¿qué está haciendo realmente?",
+      visual: "candidate",
+    },
+    {
+      id: "hypotheses",
+      time: "8-18 min",
+      title: "Cuatro hipótesis quedan abiertas",
+      body: [
+        "Antes de usar definiciones, construye explicaciones posibles. Tal vez el sistema copió, buscó, aprendió, inventó, mezcló ejemplos, predijo o siguió instrucciones.",
+        "Una explicación inicial no tiene que ser perfecta. Se convierte en evidencia para investigar: ¿qué necesitamos saber para explicar mejor el caso?",
+      ],
+      listTitle: "Preguntas para mantener visibles",
+      list: ["¿Copió?", "¿Buscó?", "¿Aprendió?", "¿Creó?"],
+      visual: "questions",
+    },
+    {
+      id: "classification",
+      time: "18-35 min",
+      title: "Clasifica sistemas antes de recibir definiciones",
+      body: [
+        "Ahora pon a prueba tus criterios. Para cada sistema, elige una opción: IA, Machine Learning, IA Generativa o No estoy seguro.",
+        "El movimiento importante no es adivinar la etiqueta. Lo importante es explicar el criterio que utilizaste.",
+      ],
+      table: {
+        headers: ["Sistema", "Discusión inicial"],
+        rows: [
+          ["Calculadora", "No necesariamente IA"],
+          ["Reglas para aprobar créditos", "Depende del diseño"],
+          ["Sistema experto basado en reglas", "IA, no necesariamente ML"],
+          ["Filtro de spam entrenado con correos", "ML"],
+          ["Recomendador de películas", "ML"],
+          ["Reconocimiento de rostros", "ML / Deep Learning"],
+          ["Predicción del precio de una vivienda", "ML"],
+          ["ChatGPT redactando un correo", "IA Generativa"],
+          ["Generador de imágenes", "IA Generativa"],
+          ["Asistente que produce código", "IA Generativa"],
+        ],
+      },
+      callout: "Cuando el grupo no está de acuerdo, el desacuerdo revela el problema real: todavía necesitamos mejores criterios.",
+    },
+    {
+      id: "what-is-ai",
+      time: "35-50 min",
+      title: "¿Qué es la Inteligencia Artificial?",
+      body: [
+        "La Inteligencia Artificial es el campo que estudia y desarrolla sistemas capaces de realizar tareas asociadas con capacidades que consideramos inteligentes.",
+        "Esas capacidades incluyen percibir, razonar, decidir, resolver problemas, interpretar lenguaje, planificar, aprender y actuar.",
+        "IA no es lo mismo que Machine Learning. Un sistema puede considerarse IA sin haber aprendido de datos, por ejemplo cuando usa reglas explícitas, búsqueda o representación de conocimiento.",
+      ],
+      visual: "aiMap",
+    },
+    {
+      id: "how-ml-learns",
+      time: "53-70 min",
+      title: "¿Cómo aprende una máquina?",
+      body: [
+        "Imagina 10.000 correos electrónicos. Algunos están marcados como spam y otros como no spam. Con programación tradicional podrías escribir reglas como: si contiene “ganaste dinero”, marcarlo como sospechoso.",
+        "Pero las excepciones aparecen rápidamente. Machine Learning cambia la estrategia: en lugar de escribir cada regla, se usan ejemplos para que un algoritmo descubra patrones útiles.",
+        "Entrenamiento es el momento en que el modelo ajusta sus parámetros usando datos. Inferencia es el momento en que un modelo entrenado recibe una entrada nueva y produce una salida.",
+      ],
+      visual: "mlFlow",
+    },
+    {
+      id: "generative-ai",
+      time: "70-88 min",
+      title: "¿Qué cambia con la IA Generativa?",
+      body: [
+        "Un filtro de spam clasifica un correo existente. Un modelo de precio predice un número. Un recomendador ordena opciones. Un sistema generativo produce una nueva instancia de contenido.",
+        "La IA Generativa incluye modelos capaces de producir contenido nuevo a partir de patrones aprendidos durante el entrenamiento y de las condiciones o instrucciones que reciben.",
+        "Puede producir texto, imágenes, audio, video, código, diseños o datos sintéticos. Generar no es lo mismo que buscar información.",
+      ],
+      callout: "Un sistema generativo puede producir una respuesta muy convincente sin que esa respuesta sea verdadera.",
+      visual: "genCompare",
+    },
+    {
+      id: "applications",
+      time: "88-103 min",
+      title: "¿Dónde se usa ya la IA Generativa?",
+      body: [
+        "Traslada el caso de Laura a otros dominios. En cada caso, identifica qué podría producir el sistema, qué necesidad real podría atender y qué podría salir mal.",
+        "Un ejemplo útil no empieza con “usar IA”. Empieza con una necesidad, un tipo de salida y un riesgo que debe gestionarse.",
+      ],
+      cards: [
+        ["Educación", "Preguntas de práctica, retroalimentación, resúmenes", "Explicaciones incorrectas o dependencia"],
+        ["Ingeniería de software", "Código, pruebas, prototipos", "Código inseguro o difícil de mantener"],
+        ["Marketing", "Textos de campaña, imágenes, variantes", "Contenido engañoso o genérico"],
+        ["Medicina", "Borradores de reportes, explicaciones para pacientes", "Recomendaciones inseguras"],
+        ["Entretenimiento", "Personajes, historias, recursos para videojuegos", "Problemas de derechos u originalidad"],
+        ["Diseño", "Mockups, medios, variaciones de estilo", "Salidas de baja calidad o sesgadas"],
+      ],
+    },
+    {
+      id: "forbidden-words",
+      time: "103-114 min",
+      title: "Explícalo sin definiciones circulares",
+      body: [
+        "Una explicación fuerte sobrevive a restricciones. Intenta explicar las diferencias sin depender de las palabras más obvias.",
+        "Esto te obliga a usar conceptos como datos, patrones, entrenamiento, modelo, predicción, salida, ejemplos y criterios.",
+      ],
+      cards: [
+        ["Ronda 1", "Explica la diferencia entre IA y Machine Learning.", "Prohibidas: inteligencia, aprender, máquina"],
+        ["Ronda 2", "Explica la diferencia entre Machine Learning e IA Generativa.", "Prohibidas: generar, crear, contenido"],
+      ],
+    },
+    {
+      id: "thread",
+      time: "Hilo de la clase",
+      title: "La narrativa de las dos horas",
+      body: [
+        "Laura parece real. Laura no existe. ¿Cómo pudo producirse? ¿Todo sistema complejo es IA? ¿Toda IA aprende? ¿Qué significa aprender de datos?",
+        "Luego aparece la distinción clave: clasificar, predecir y recomendar no es lo mismo que producir una nueva instancia de contenido.",
+      ],
+      listTitle: "Evidencia final",
+      list: [
+        "Esto pertenece a IA porque...",
+        "Utiliza Machine Learning porque...",
+        "No es IA Generativa porque su objetivo principal es clasificar o predecir, no producir una nueva instancia de contenido.",
+      ],
+    },
+  ],
+};
 
 const text = {
   en: {
-    pageTitle: "Class 01 | AI and Machine Learning",
+    pageTitle: "Class 01 | What can a machine create?",
     navHome: "Home",
-    navConcepts: "Concepts",
-    navLab: "Lab",
-    navCheck: "Check",
+    navRoute: "Route",
+    navNotebook: "Notebook",
+    navTicket: "Ticket",
     classLabel: "Class 01",
-    heroTitle: "AI and Machine Learning",
-    heroText: "Learn how intelligent systems move from programmed rules to patterns adjusted from data.",
-    startClass: "Start class",
-    openLab: "Open lab",
-    outcomeLabel: "Learning outcome",
-    outcomeTitle: "What you should be able to explain",
-    outcome1Title: "Field map",
-    outcome1Text: "Distinguish Artificial Intelligence, Machine Learning, and Deep Learning.",
-    outcome2Title: "Problem framing",
-    outcome2Text: "Recognize when a problem can be formulated as a learning problem.",
-    outcome3Title: "Data language",
-    outcome3Text: "Identify observations, features, labels, algorithms, models, training, and inference.",
-    outcome4Title: "Responsible use",
-    outcome4Text: "Explain why prediction supports decisions but does not replace human responsibility.",
-    conceptsLabel: "Concepts",
-    conceptsTitle: "Foundations for learning systems",
+    heroTitle: "What does it mean for a machine to create?",
+    heroText:
+      "Start with a person who seems real, test explanations, and build criteria for Artificial Intelligence, Machine Learning, and Generative AI.",
+    startCase: "Meet Laura",
+    viewMap: "View concept map",
+    candidateLabel: "Opening case",
+    candidateName: "Laura Méndez",
+    candidateRole: "24 years old · Software developer",
+    signalPhoto: "Photo",
+    signalCv: "CV",
+    signalVoice: "Voice",
+    signalCode: "Code",
+    outcomeLabel: "Session goal",
+    outcomeTitle: "Build criteria, not memorized labels",
+    competencyText:
+      "Distinguish Artificial Intelligence, Machine Learning, and Generative AI by analyzing real systems and applications, explaining what characterizes each approach, and arguing why a solution belongs or does not belong to a category.",
+    routeLabel: "120-minute route",
+    routeTitle: "From surprise to explanation",
+    notebookLabel: "Student notebook",
+    notebookTitle: "The question that organizes the class",
     indexTitle: "Jump to",
-    s1Title: "Where is the intelligence?",
-    s1Text1: "An alarm set for 6:00 a.m. follows a fixed instruction. A traffic light that adapts to vehicle flow uses information from the environment. A system that estimates academic risk from historical records learns a pattern from data.",
-    s1Text2: "In engineering, intelligence is evaluated through observable capabilities: perceiving information, representing a problem, reasoning about alternatives, learning from experience, making decisions, and acting toward an objective.",
-    s1Callout: "A system is not intelligent because it looks human. It is evaluated by the quality of its decisions within an objective and a context.",
-    dPerspectiveCenter: "Intelligent system",
-    dPerspective1Title: "Think like humans",
-    dPerspective1Text: "Model memory, reasoning, and learning.",
-    dPerspective2Title: "Think rationally",
-    dPerspective2Text: "Use logic to reach valid conclusions.",
-    dPerspective3Title: "Act like humans",
-    dPerspective3Text: "Produce behavior that is hard to distinguish from human behavior.",
-    dPerspective4Title: "Act rationally",
-    dPerspective4Text: "Choose actions that increase the chance of reaching a goal.",
-    s2Title: "A practical definition of AI",
-    s2Text1: "An AI system is machine-based. It receives inputs, uses explicit or implicit objectives, infers how to produce outputs, and can influence physical or virtual environments through predictions, content, recommendations, or decisions.",
-    s2Text2: "Automation is not automatically AI. A fixed macro can copy data without learning. AI appears when the system includes perception, reasoning, search, learning, or decision mechanisms beyond a rigid sequence of instructions.",
-    aiComp1Title: "Inputs",
-    aiComp1Text: "Data, signals, images, text, measurements, or states.",
-    aiComp2Title: "Objectives",
-    aiComp2Text: "Criteria that orient behavior.",
-    aiComp3Title: "Inference",
-    aiComp3Text: "Transformation from input to estimate, class, recommendation, or action.",
-    aiComp4Title: "Influence",
-    aiComp4Text: "The output can guide a person or affect an environment.",
-    s3Title: "Rules programmed vs. patterns learned",
-    s3Text1: "In traditional programming, the rule is written by the developer. In Machine Learning, examples, a task, and a performance measure are supplied so an algorithm can adjust a model.",
-    s3Text2: "Code does not disappear. It collects data, prepares it, selects algorithms, trains models, calculates metrics, and integrates predictions into applications. What changes is the origin of the decision function.",
-    dCompare1Title: "Traditional programming",
-    dCompareData: "Data",
-    dCompareRules: "Rules",
-    dCompareResult: "Result",
-    dCompare1Text: "The programmer explicitly writes the logic.",
-    dCompare2Title: "Machine Learning",
-    dCompareExamples: "Examples",
-    dCompareAlgorithm: "Algorithm",
-    dCompareModel: "Model",
-    dCompare2Text: "The algorithm adjusts a function from examples.",
-    s4Title: "AI, Machine Learning, and Deep Learning",
-    s4Text1: "Artificial Intelligence is the broad field. Machine Learning is a subfield focused on improving behavior through data or experience. Deep Learning is a family of Machine Learning methods based on neural networks with many layers.",
-    s4Text2: "This hierarchy avoids three common mistakes: not all AI uses ML, not all ML uses deep networks, and not every practical problem needs a neural network.",
-    dMapAI: "Artificial Intelligence",
-    dMapAIText: "Perceive, reason, plan, decide, and learn.",
-    dMapML: "Machine Learning",
-    dMapMLText: "Models adjusted with data.",
-    dMapDL: "Deep Learning",
-    dMapDLText: "Neural networks with multiple layers.",
-    s5Title: "What does it mean for a machine to learn?",
-    s5Text1: "A program learns from experience when its performance on a task improves according to a defined measure. This forces three questions: what task should the system perform, what experience does it learn from, and how will improvement be measured?",
-    s5Text2: "Learning does not mean understanding like a person. A model can capture a statistical regularity without knowing its cause.",
-    learnCol1: "Element",
-    learnCol2: "Question",
-    learnCol3: "Academic example",
-    taskLabel: "Task",
-    taskQuestion: "What should the system do?",
-    taskExample: "Classify whether a student is at risk.",
-    experienceLabel: "Experience",
-    experienceQuestion: "What information does it learn from?",
-    experienceExample: "Historical attendance, grades, and final outcome.",
-    performanceLabel: "Performance",
-    performanceQuestion: "How do we decide it improved?",
-    performanceExample: "Recall, precision, and review of false alerts.",
-    s6Title: "The basic language of data",
-    s6Text1: "A dataset is a structured collection of examples. In a table, each row usually represents an observation and each column represents a variable.",
-    s6Text2: "Features are the input variables used by the model. The label, objective, or target is the value to predict in supervised learning.",
-    dDataAttendance: "Attendance",
-    dDataTasks: "Tasks",
-    dDataGrade: "First grade",
-    dDataPassed: "Passed",
-    yes: "Yes",
-    no: "No",
-    dDataRow: "Row = observation",
-    dDataColumns: "Columns = features",
-    dDataTarget: "Target = label",
-    s7Title: "Three ways to learn",
-    s7Text1: "Machine Learning paradigms differ by the signal available to adjust behavior. Supervised learning has known answers, unsupervised learning searches for structure, and reinforcement learning uses accumulated consequences.",
-    dType1Signal: "Data + label",
-    dType1Title: "Supervised",
-    dType1Text: "Learns from examples that include the correct answer.",
-    dType1Examples: "Classification, regression",
-    dType2Signal: "Only data",
-    dType2Title: "Unsupervised",
-    dType2Text: "Finds structure without a predefined answer.",
-    dType2Examples: "Clustering, anomaly detection",
-    dType3Signal: "Experience",
-    dType3Title: "Reinforcement",
-    dType3Text: "Acts, receives rewards or penalties, and learns a policy.",
-    dType3Examples: "Agent, action, reward",
-    s8Title: "The life cycle of a model",
-    s8Text1: "A Machine Learning project does not start by selecting an algorithm. It starts by defining a decision and continues after the model is used.",
-    s8Text2: "A valuable model is not simply the one with the highest number in a lab. It is the one that improves a real decision without creating unacceptable harm.",
-    life1: "Problem",
-    life2: "Data",
-    life3: "Prepare",
-    life4: "Train",
-    life5: "Evaluate",
-    life6: "Use",
-    life7: "Monitor",
-    s9Title: "Training, validation, testing, and metrics",
-    s9Text1: "Evaluating with the same data used for training gives an optimistic view. Training adjusts parameters, validation compares configurations, and testing estimates final performance once design decisions are closed.",
-    s9Text2: "Metrics must match the impact of the decision. In academic risk, missing a real case can be more costly than creating an extra alert.",
-    metricAccuracy: "Overall proportion of correct predictions.",
-    metricPrecisionTitle: "Precision",
-    metricPrecision: "Of all alerts, how many were real?",
-    metricRecall: "Of all real risk cases, how many were detected?",
-    metricMae: "Average absolute error for numeric predictions.",
-    s10Title: "Generalization and responsible decisions",
-    s10Text1: "Generalizing means applying a learned pattern to new cases from the same problem. Underfitting is too simple, overfitting memorizes noise, and good fit captures the pattern that remains useful outside training data.",
-    s10Text2: "A prediction is evidence for a decision, not an automatic sentence. Responsible use combines technical quality, human review, privacy, transparency, and institutional accountability.",
-    fitUnder: "Underfitting",
-    fitUnderText: "Too simple",
-    fitGood: "Good fit",
-    fitGoodText: "Captures the pattern",
-    fitOver: "Overfitting",
-    fitOverText: "Memorizes noise",
-    labLabel: "Mini lab",
-    labTitle: "From dataset to prediction",
-    labIntro: "This artificial example shows the flow of a supervised classification task. It is useful for learning the vocabulary, but it is not evidence for a real academic decision.",
-    labStep1: "Create a small dataset.",
-    labStep2: "Separate features and target.",
-    labStep3: "Split training and test data.",
-    labStep4: "Train a decision tree.",
-    labStep5: "Evaluate and predict a new case.",
-    checkLabel: "Study check",
-    checkTitle: "Apply the concepts",
-    checkCase: "A company wants to reduce server failures. It has temperature, CPU use, memory use, disk errors, and records indicating whether a failure occurred during the next 24 hours.",
-    q1: "What is the observation unit?",
-    q2: "Which variables are features?",
-    q3: "What is the label?",
-    q4: "Is this supervised, unsupervised, or reinforcement learning?",
-    q5: "Is the output classification or regression?",
-    q6: "What information could create data leakage?",
-    q7: "Which error would be more costly: a false alarm or missing a real failure?",
-    q8: "How could the prediction be used without becoming an automatic decision?",
-    referencesLabel: "References",
-    referencesTitle: "Recommended sources",
+    mapLabel: "Concept map",
+    mapTitle: "Reconstruct this map from the examples",
+    mapAI: "Artificial Intelligence",
+    mapRules: "Rules · search · knowledge",
+    mapML: "Machine Learning",
+    mapDL: "Deep Learning",
+    mapClassic: "Classify · predict · recommend",
+    mapGen: "Generative models",
+    contentText: "Text",
+    contentImage: "Image",
+    contentAudio: "Audio",
+    contentCode: "Code",
+    contentVideo: "Video",
+    ticketLabel: "Exit ticket",
+    ticketTitle: "Show what changed in your explanation",
+    ticket1:
+      "A system analyzes 500,000 transactions and determines which ones look fraudulent. Is it AI, ML, or Generative AI? Explain why.",
+    ticket2:
+      "A system receives a text description and produces an image that did not exist before. What changes compared with the previous system?",
+    ticket3:
+      "Complete: “Before, I thought Generative AI was _____. Now I understand that _____.”",
+    ticket4: "Complete: “What I still do not understand is _____.”",
     footerText: "Generative AI course notebook",
+    labels: {
+      time: "Time",
+      activity: "Central activity",
+      purpose: "Purpose",
+      options: "Options",
+      need: "Need",
+      risk: "Risk",
+    },
   },
   es: {
-    pageTitle: "Clase 01 | IA y Machine Learning",
+    pageTitle: "Clase 01 | ¿Qué puede crear una máquina?",
     navHome: "Inicio",
-    navConcepts: "Conceptos",
-    navLab: "Laboratorio",
-    navCheck: "Verificación",
+    navRoute: "Ruta",
+    navNotebook: "Cuaderno",
+    navTicket: "Ticket",
     classLabel: "Clase 01",
-    heroTitle: "IA y Machine Learning",
-    heroText: "Aprende cómo los sistemas inteligentes pasan de reglas programadas a patrones ajustados desde datos.",
-    startClass: "Empezar clase",
-    openLab: "Abrir laboratorio",
-    outcomeLabel: "Resultado de aprendizaje",
-    outcomeTitle: "Lo que deberías poder explicar",
-    outcome1Title: "Mapa del campo",
-    outcome1Text: "Distinguir Inteligencia Artificial, Machine Learning y Deep Learning.",
-    outcome2Title: "Formulación del problema",
-    outcome2Text: "Reconocer cuándo un problema puede formularse como un problema de aprendizaje.",
-    outcome3Title: "Lenguaje de datos",
-    outcome3Text: "Identificar observaciones, características, etiquetas, algoritmos, modelos, entrenamiento e inferencia.",
-    outcome4Title: "Uso responsable",
-    outcome4Text: "Explicar por qué una predicción apoya decisiones, pero no reemplaza la responsabilidad humana.",
-    conceptsLabel: "Conceptos",
-    conceptsTitle: "Fundamentos de los sistemas que aprenden",
+    heroTitle: "¿Qué significa que una máquina pueda crear?",
+    heroText:
+      "Empieza con una persona que parece real, pon a prueba explicaciones y construye criterios para Inteligencia Artificial, Machine Learning e IA Generativa.",
+    startCase: "Conocer a Laura",
+    viewMap: "Ver mapa conceptual",
+    candidateLabel: "Caso inicial",
+    candidateName: "Laura Méndez",
+    candidateRole: "24 años · Desarrolladora de software",
+    signalPhoto: "Foto",
+    signalCv: "CV",
+    signalVoice: "Voz",
+    signalCode: "Código",
+    outcomeLabel: "Meta de la sesión",
+    outcomeTitle: "Construir criterios, no memorizar etiquetas",
+    competencyText:
+      "Distinguir Inteligencia Artificial, Machine Learning e IA Generativa mediante el análisis de sistemas y aplicaciones reales, explicando qué caracteriza a cada enfoque y argumentando por qué una solución pertenece o no a una categoría.",
+    routeLabel: "Ruta de 120 minutos",
+    routeTitle: "De la sorpresa a la explicación",
+    notebookLabel: "Cuaderno del estudiante",
+    notebookTitle: "La pregunta que organiza la clase",
     indexTitle: "Ir a",
-    s1Title: "¿Dónde está la inteligencia?",
-    s1Text1: "Una alarma puesta para las 6:00 a. m. sigue una instrucción fija. Un semáforo que se adapta al flujo vehicular usa información del entorno. Un sistema que estima riesgo académico desde registros históricos aprende un patrón a partir de datos.",
-    s1Text2: "En ingeniería, la inteligencia se evalúa mediante capacidades observables: percibir información, representar un problema, razonar sobre alternativas, aprender de la experiencia, tomar decisiones y actuar hacia un objetivo.",
-    s1Callout: "Un sistema no es inteligente porque parezca humano. Se evalúa por la calidad de sus decisiones dentro de un objetivo y un contexto.",
-    dPerspectiveCenter: "Sistema inteligente",
-    dPerspective1Title: "Pensar como humanos",
-    dPerspective1Text: "Modelar memoria, razonamiento y aprendizaje.",
-    dPerspective2Title: "Pensar racionalmente",
-    dPerspective2Text: "Usar lógica para llegar a conclusiones válidas.",
-    dPerspective3Title: "Actuar como humanos",
-    dPerspective3Text: "Producir conductas difíciles de distinguir de las humanas.",
-    dPerspective4Title: "Actuar racionalmente",
-    dPerspective4Text: "Elegir acciones que aumentan la probabilidad de alcanzar un objetivo.",
-    s2Title: "Una definición práctica de IA",
-    s2Text1: "Un sistema de IA está basado en máquinas. Recibe entradas, usa objetivos explícitos o implícitos, infiere cómo producir salidas y puede influir en entornos físicos o virtuales mediante predicciones, contenido, recomendaciones o decisiones.",
-    s2Text2: "Automatizar no significa usar IA automáticamente. Una macro fija puede copiar datos sin aprender. La IA aparece cuando el sistema incluye percepción, razonamiento, búsqueda, aprendizaje o decisión más allá de una secuencia rígida de instrucciones.",
-    aiComp1Title: "Entradas",
-    aiComp1Text: "Datos, señales, imágenes, texto, mediciones o estados.",
-    aiComp2Title: "Objetivos",
-    aiComp2Text: "Criterios que orientan el comportamiento.",
-    aiComp3Title: "Inferencia",
-    aiComp3Text: "Transformación de entrada a estimación, clase, recomendación o acción.",
-    aiComp4Title: "Influencia",
-    aiComp4Text: "La salida puede guiar a una persona o afectar un entorno.",
-    s3Title: "Reglas programadas vs. patrones aprendidos",
-    s3Text1: "En la programación tradicional, la regla la escribe quien desarrolla. En Machine Learning, se entregan ejemplos, una tarea y una medida de desempeño para que un algoritmo ajuste un modelo.",
-    s3Text2: "El código no desaparece. Recolecta datos, los prepara, selecciona algoritmos, entrena modelos, calcula métricas e integra predicciones en aplicaciones. Lo que cambia es el origen de la función de decisión.",
-    dCompare1Title: "Programación tradicional",
-    dCompareData: "Datos",
-    dCompareRules: "Reglas",
-    dCompareResult: "Resultado",
-    dCompare1Text: "La lógica se escribe explícitamente.",
-    dCompare2Title: "Machine Learning",
-    dCompareExamples: "Ejemplos",
-    dCompareAlgorithm: "Algoritmo",
-    dCompareModel: "Modelo",
-    dCompare2Text: "El algoritmo ajusta una función desde ejemplos.",
-    s4Title: "IA, Machine Learning y Deep Learning",
-    s4Text1: "La Inteligencia Artificial es el campo amplio. Machine Learning es un subcampo enfocado en mejorar el comportamiento mediante datos o experiencia. Deep Learning es una familia de métodos de Machine Learning basada en redes neuronales con muchas capas.",
-    s4Text2: "Esta jerarquía evita tres errores frecuentes: no toda IA usa ML, no todo ML usa redes profundas y no todo problema práctico necesita una red neuronal.",
-    dMapAI: "Inteligencia Artificial",
-    dMapAIText: "Percibir, razonar, planificar, decidir y aprender.",
-    dMapML: "Machine Learning",
-    dMapMLText: "Modelos ajustados con datos.",
-    dMapDL: "Deep Learning",
-    dMapDLText: "Redes neuronales con múltiples capas.",
-    s5Title: "¿Qué significa que una máquina aprenda?",
-    s5Text1: "Un programa aprende de la experiencia cuando su desempeño en una tarea mejora según una medida definida. Esto obliga a responder tres preguntas: qué tarea debe realizar el sistema, de qué experiencia aprende y cómo se medirá la mejora.",
-    s5Text2: "Aprender no significa comprender como una persona. Un modelo puede capturar una regularidad estadística sin conocer su causa.",
-    learnCol1: "Elemento",
-    learnCol2: "Pregunta",
-    learnCol3: "Ejemplo académico",
-    taskLabel: "Tarea",
-    taskQuestion: "¿Qué debe hacer el sistema?",
-    taskExample: "Clasificar si un estudiante está en riesgo.",
-    experienceLabel: "Experiencia",
-    experienceQuestion: "¿De qué información aprende?",
-    experienceExample: "Asistencia, notas y resultado final históricos.",
-    performanceLabel: "Desempeño",
-    performanceQuestion: "¿Cómo decidimos si mejoró?",
-    performanceExample: "Recall, precisión y revisión de falsas alertas.",
-    s6Title: "El lenguaje básico de los datos",
-    s6Text1: "Un dataset es una colección estructurada de ejemplos. En una tabla, cada fila suele representar una observación y cada columna representa una variable.",
-    s6Text2: "Las características son las variables de entrada usadas por el modelo. La etiqueta, objetivo o target es el valor que se busca predecir en aprendizaje supervisado.",
-    dDataAttendance: "Asistencia",
-    dDataTasks: "Tareas",
-    dDataGrade: "Primer corte",
-    dDataPassed: "Aprobó",
-    yes: "Sí",
-    no: "No",
-    dDataRow: "Fila = observación",
-    dDataColumns: "Columnas = características",
-    dDataTarget: "Objetivo = etiqueta",
-    s7Title: "Tres formas de aprender",
-    s7Text1: "Los paradigmas de Machine Learning se diferencian por la señal disponible para ajustar el comportamiento. El aprendizaje supervisado tiene respuestas conocidas, el no supervisado busca estructura y el aprendizaje por refuerzo usa consecuencias acumuladas.",
-    dType1Signal: "Datos + etiqueta",
-    dType1Title: "Supervisado",
-    dType1Text: "Aprende con ejemplos que incluyen la respuesta correcta.",
-    dType1Examples: "Clasificación, regresión",
-    dType2Signal: "Solo datos",
-    dType2Title: "No supervisado",
-    dType2Text: "Encuentra estructura sin una respuesta previamente definida.",
-    dType2Examples: "Clustering, anomalías",
-    dType3Signal: "Experiencia",
-    dType3Title: "Por refuerzo",
-    dType3Text: "Actúa, recibe recompensas o penalizaciones y aprende una política.",
-    dType3Examples: "Agente, acción, recompensa",
-    s8Title: "El ciclo de vida de un modelo",
-    s8Text1: "Un proyecto de Machine Learning no empieza seleccionando un algoritmo. Empieza definiendo una decisión y continúa después de usar el modelo.",
-    s8Text2: "Un modelo valioso no es simplemente el que obtiene la cifra más alta en un laboratorio. Es el que mejora una decisión real sin crear daños inaceptables.",
-    life1: "Problema",
-    life2: "Datos",
-    life3: "Preparar",
-    life4: "Entrenar",
-    life5: "Evaluar",
-    life6: "Usar",
-    life7: "Monitorear",
-    s9Title: "Entrenamiento, validación, prueba y métricas",
-    s9Text1: "Evaluar con los mismos datos usados para entrenar da una visión optimista. El entrenamiento ajusta parámetros, la validación compara configuraciones y la prueba estima el desempeño final cuando las decisiones de diseño ya están cerradas.",
-    s9Text2: "Las métricas deben corresponder al impacto de la decisión. En riesgo académico, dejar pasar un caso real puede costar más que generar una alerta adicional.",
-    metricAccuracy: "Proporción total de predicciones correctas.",
-    metricPrecisionTitle: "Precisión",
-    metricPrecision: "De todas las alertas, ¿cuántas eran reales?",
-    metricRecall: "De todos los casos reales de riesgo, ¿cuántos fueron detectados?",
-    metricMae: "Promedio del error absoluto en predicciones numéricas.",
-    s10Title: "Generalización y decisiones responsables",
-    s10Text1: "Generalizar significa aplicar un patrón aprendido a casos nuevos del mismo problema. El subajuste es demasiado simple, el sobreajuste memoriza ruido y el buen ajuste captura el patrón que sigue siendo útil fuera de los datos de entrenamiento.",
-    s10Text2: "Una predicción es evidencia para una decisión, no una sentencia automática. El uso responsable combina calidad técnica, revisión humana, privacidad, transparencia y responsabilidad institucional.",
-    fitUnder: "Subajuste",
-    fitUnderText: "Demasiado simple",
-    fitGood: "Buen ajuste",
-    fitGoodText: "Captura el patrón",
-    fitOver: "Sobreajuste",
-    fitOverText: "Memoriza ruido",
-    labLabel: "Mini laboratorio",
-    labTitle: "Del dataset a la predicción",
-    labIntro: "Este ejemplo artificial muestra el flujo de una tarea de clasificación supervisada. Sirve para aprender el vocabulario, pero no es evidencia para una decisión académica real.",
-    labStep1: "Crear un dataset pequeño.",
-    labStep2: "Separar características y objetivo.",
-    labStep3: "Dividir datos de entrenamiento y prueba.",
-    labStep4: "Entrenar un árbol de decisión.",
-    labStep5: "Evaluar y predecir un caso nuevo.",
-    checkLabel: "Verificación",
-    checkTitle: "Aplica los conceptos",
-    checkCase: "Una empresa quiere reducir las fallas de sus servidores. Tiene temperatura, uso de CPU, uso de memoria, errores de disco y registros que indican si ocurrió una falla durante las siguientes 24 horas.",
-    q1: "¿Cuál es la unidad de observación?",
-    q2: "¿Qué variables son características?",
-    q3: "¿Cuál es la etiqueta?",
-    q4: "¿Es aprendizaje supervisado, no supervisado o por refuerzo?",
-    q5: "¿La salida es clasificación o regresión?",
-    q6: "¿Qué información podría producir fuga de datos?",
-    q7: "¿Qué error sería más costoso: una falsa alarma o no detectar una falla real?",
-    q8: "¿Cómo podría usarse la predicción sin convertirla en una decisión automática?",
-    referencesLabel: "Referencias",
-    referencesTitle: "Fuentes recomendadas",
+    mapLabel: "Mapa conceptual",
+    mapTitle: "Reconstruye este mapa desde los ejemplos",
+    mapAI: "Inteligencia Artificial",
+    mapRules: "Reglas · búsqueda · conocimiento",
+    mapML: "Machine Learning",
+    mapDL: "Deep Learning",
+    mapClassic: "Clasificar · predecir · recomendar",
+    mapGen: "Modelos generativos",
+    contentText: "Texto",
+    contentImage: "Imagen",
+    contentAudio: "Audio",
+    contentCode: "Código",
+    contentVideo: "Video",
+    ticketLabel: "Ticket de salida",
+    ticketTitle: "Muestra qué cambió en tu explicación",
+    ticket1:
+      "Un sistema analiza 500.000 transacciones y determina cuáles parecen fraudulentas. ¿Es IA, ML o IA Generativa? Explica por qué.",
+    ticket2:
+      "Un sistema recibe una descripción textual y produce una imagen que no existía previamente. ¿Qué cambia frente al sistema anterior?",
+    ticket3:
+      "Completa: “Antes pensaba que la IA Generativa era _____. Ahora entiendo que _____.”",
+    ticket4: "Completa: “Lo que todavía no entiendo es _____.”",
     footerText: "Cuaderno del curso de IA Generativa",
+    labels: {
+      time: "Tiempo",
+      activity: "Actividad central",
+      purpose: "Propósito",
+      options: "Opciones",
+      need: "Necesidad",
+      risk: "Riesgo",
+    },
   },
 };
+
+function cardVisual(kind, lang) {
+  if (kind === "candidate") {
+    return `
+      <div class="artifact-stack" aria-hidden="true">
+        <div><span>${lang === "es" ? "Foto" : "Photo"}</span></div>
+        <div><span>CV</span></div>
+        <div><span>${lang === "es" ? "Voz" : "Voice"}</span></div>
+        <div><span>${lang === "es" ? "Código" : "Code"}</span></div>
+      </div>`;
+  }
+  if (kind === "questions") {
+    const qs = lang === "es" ? ["¿Copió?", "¿Buscó?", "¿Aprendió?", "¿Creó?"] : ["Did it copy?", "Did it search?", "Did it learn?", "Did it create?"];
+    return `<div class="question-grid">${qs.map((q) => `<span>${q}</span>`).join("")}</div>`;
+  }
+  if (kind === "aiMap") {
+    return `
+      <div class="scope-map compact-map">
+        <div class="scope-card scope-ai"><strong>${lang === "es" ? "Inteligencia Artificial" : "Artificial Intelligence"}</strong></div>
+        <div class="map-split">
+          <div class="scope-card">${lang === "es" ? "Reglas · búsqueda · conocimiento" : "Rules · search · knowledge"}</div>
+          <div class="scope-card scope-ml">Machine Learning</div>
+        </div>
+        <div class="scope-card scope-dl">Deep Learning</div>
+      </div>`;
+  }
+  if (kind === "mlFlow") {
+    const steps = lang === "es" ? ["Datos", "Entrenamiento", "Modelo", "Nuevo dato", "Predicción"] : ["Data", "Training", "Model", "New input", "Prediction"];
+    return `<div class="pipeline">${steps.map((step) => `<span>${step}</span>`).join("")}</div>`;
+  }
+  if (kind === "genCompare") {
+    const rows = lang === "es"
+      ? [["Clasificador", "Esto es spam"], ["Predictor", "El precio será 300 millones"], ["Recomendador", "Probablemente te guste esta película"], ["Generativo", "Produce contenido nuevo"]]
+      : [["Classifier", "This is spam"], ["Predictor", "The price will be 300 million"], ["Recommender", "You will probably like this movie"], ["Generative", "Produces new content"]];
+    return `<div class="compare-list">${rows.map(([a, b]) => `<div><strong>${a}</strong><span>${b}</span></div>`).join("")}</div>`;
+  }
+  return "";
+}
+
+function renderLesson(section, index, lang) {
+  return `
+    <article class="lesson-section story-section" id="${section.id}">
+      <div>
+        <span class="topic-number">${section.time}</span>
+        <h3>${section.title}</h3>
+        ${section.body.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+        ${section.callout ? `<div class="callout">${section.callout}</div>` : ""}
+      </div>
+      <div class="diagram-panel story-panel">
+        ${section.visual ? cardVisual(section.visual, lang) : ""}
+        ${section.list ? `<strong class="panel-title">${section.listTitle}</strong><ul>${section.list.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+        ${section.table ? `<div class="table-wrap"><table><thead><tr>${section.table.headers.map((header) => `<th>${header}</th>`).join("")}</tr></thead><tbody>${section.table.rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : ""}
+        ${section.cards ? `<div class="activity-cards">${section.cards.map((card) => `<article><strong>${card[0]}</strong><p>${card[1]}</p><span>${card[2]}</span></article>`).join("")}</div>` : ""}
+        ${section.id === "classification" ? `<div class="choice-row"><span>AI</span><span>ML</span><span>${lang === "es" ? "IAG" : "GenAI"}</span><span>${lang === "es" ? "No estoy seguro" : "Not sure"}</span></div>` : ""}
+      </div>
+    </article>
+  `;
+}
 
 function render(lang) {
   const dictionary = text[lang];
@@ -352,15 +485,23 @@ function render(lang) {
     button.classList.toggle("is-active", button.dataset.lang === lang);
   });
 
-  document.querySelectorAll("[data-lang-only]").forEach((node) => {
-    node.classList.toggle("is-visible", node.dataset.langOnly === lang);
-  });
+  document.getElementById("routeGrid").innerHTML = route[lang]
+    .map(([time, moment, activity, purpose]) => `
+      <article>
+        <span>${time}</span>
+        <strong>${moment}</strong>
+        <p>${activity}</p>
+        <em>${purpose}</em>
+      </article>
+    `)
+    .join("");
 
-  document.getElementById("classIndex").innerHTML = sections
-    .map((section, index) => {
-      const title = lang === "es" ? section[2] : section[1];
-      return `<a href="#${section[0]}"><span>${String(index + 1).padStart(2, "0")}</span>${title}</a>`;
-    })
+  document.getElementById("classIndex").innerHTML = lessons[lang]
+    .map((section, index) => `<a href="#${section.id}"><span>${String(index + 1).padStart(2, "0")}</span>${section.title}</a>`)
+    .join("");
+
+  document.getElementById("lessonSections").innerHTML = lessons[lang]
+    .map((section, index) => renderLesson(section, index, lang))
     .join("");
 }
 
