@@ -1,4 +1,4 @@
-const VERSION = "20260811-1";
+const VERSION = "20260811-2";
 
 const code = {
   install: String.raw`!pip -q install kagglehub
@@ -578,6 +578,7 @@ const text = {
     navRoute: "Route",
     navNotebook: "Notebook",
     navChallenge: "Challenge",
+    navResources: "Resources",
     classLabel: "Class 02",
     heroTitle: "Where is my burger?",
     heroText:
@@ -605,6 +606,12 @@ const text = {
     challenge2: "Explain at least two possible reasons why the model missed that case.",
     challenge3: "Propose one new variable that could reduce the error and justify why it would help.",
     challenge4: "Decide whether you would trust the model to promise an exact arrival time to a customer.",
+    resourcesLabel: "Resources",
+    resourcesTitle: "Download the notebook",
+    notebookTitleDownload: "Delivery linear regression notebook",
+    notebookDescription:
+      "Open this file in Google Colab or Jupyter to run the complete delivery-time prediction workflow.",
+    downloadNotebook: "Download .ipynb",
     footerText: "Generative AI course notebook",
     copy: "Copy",
     copied: "Copied",
@@ -615,6 +622,7 @@ const text = {
     navRoute: "Ruta",
     navNotebook: "Cuaderno",
     navChallenge: "Reto",
+    navResources: "Recursos",
     classLabel: "Clase 02",
     heroTitle: "¿Dónde está mi hamburguesa?",
     heroText:
@@ -642,6 +650,12 @@ const text = {
     challenge2: "Explica al menos dos posibles razones por las que el modelo falló en ese caso.",
     challenge3: "Propón una nueva variable que podría reducir el error y justifica por qué ayudaría.",
     challenge4: "Decide si confiarías en el modelo para prometer una hora exacta de llegada a un cliente.",
+    resourcesLabel: "Recursos",
+    resourcesTitle: "Descarga el notebook",
+    notebookTitleDownload: "Notebook de regresión lineal para entregas",
+    notebookDescription:
+      "Abre este archivo en Google Colab o Jupyter para ejecutar el flujo completo de predicción de tiempos de entrega.",
+    downloadNotebook: "Descargar .ipynb",
     footerText: "Cuaderno del curso de IA Generativa",
     copy: "Copiar",
     copied: "Copiado",
