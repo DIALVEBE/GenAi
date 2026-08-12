@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Class 02 notebook: linear regression with Machine Learning using food delivery time prediction."
+    />
+    <title>Class 02 | Linear Regression for Delivery Time</title>
+    <link rel="stylesheet" href="../../styles.css?v=20260811-1" />
+    <link rel="stylesheet" href="clase-02.css?v=20260811-1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Generative AI home">
+        <span class="brand-mark">GAI</span>
+        <span>Generative AI</span>
+      </a>
+      <nav class="top-nav" aria-label="Class navigation">
+        <a href="../../" data-i18n="navHome">Home</a>
+        <a href="#route" data-i18n="navRoute">Route</a>
+        <a href="#notebook" data-i18n="navNotebook">Notebook</a>
+        <a href="#challenge" data-i18n="navChallenge">Challenge</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language switch">
+        <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main id="top" class="class-page">
+      <section class="class-hero delivery-hero">
+        <div class="class-hero-copy">
+          <p class="eyebrow" data-i18n="classLabel">Class 02</p>
+          <h1 data-i18n="heroTitle">Where is my burger?</h1>
+          <p class="hero-text" data-i18n="heroText">
+            Build a Machine Learning model that estimates food delivery time and learn why prediction is more than drawing a line.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#notebook" data-i18n="startNotebook">Start notebook</a>
+            <a class="secondary-action" href="#code-lab" data-i18n="openCode">Open code path</a>
+          </div>
+        </div>
+        <div class="delivery-card" aria-label="Food delivery prediction preview">
+          <div class="delivery-map" aria-hidden="true">
+            <span class="pin restaurant">&nbsp;</span>
+            <span class="pin destination">&nbsp;</span>
+            <span class="route-line">&nbsp;</span>
+          </div>
+          <div class="eta-box">
+            <span data-i18n="etaLabel">Estimated arrival</span>
+            <strong data-i18n="etaValue">37 min</strong>
+          </div>
+          <div class="signal-row">
+            <span data-i18n="signalDistance">Distance</span>
+            <span data-i18n="signalTraffic">Traffic</span>
+            <span data-i18n="signalWeather">Weather</span>
+            <span data-i18n="signalVehicle">Vehicle</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="class-intro" aria-labelledby="outcome-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="outcomeLabel">Session goal</p>
+          <h2 id="outcome-title" data-i18n="outcomeTitle">Predict a number with evidence</h2>
+        </div>
+        <div class="competency-card">
+          <p data-i18n="competencyText">
+            Use a real delivery dataset to define a regression problem, prepare features and target, train a linear model, evaluate its errors, and decide how much trust a prediction deserves.
+          </p>
+        </div>
+      </section>
+
+      <section class="class-shell" id="route" aria-labelledby="route-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="routeLabel">Notebook route</p>
+          <h2 id="route-title" data-i18n="routeTitle">From question to model interpretation</h2>
+        </div>
+        <div class="route-grid" id="routeGrid"></div>
+      </section>
+
+      <section class="topics-shell class-shell" id="notebook" aria-labelledby="notebook-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="notebookLabel">Student notebook</p>
+          <h2 id="notebook-title" data-i18n="notebookTitle">Linear regression for delivery time</h2>
+        </div>
+
+        <div class="class-layout">
+          <aside class="topic-index class-index" aria-label="Class index">
+            <div class="index-title" data-i18n="indexTitle">Jump to</div>
+            <div id="classIndex"></div>
+          </aside>
+
+          <div class="class-sections" id="lessonSections"></div>
+        </div>
+      </section>
+
+      <section class="topics-shell class-shell" id="challenge" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="challengeLabel">Final challenge</p>
+          <h2 id="challenge-title" data-i18n="challengeTitle">Explain the model where it fails</h2>
+        </div>
+        <div class="check-card challenge-card">
+          <ol>
+            <li data-i18n="challenge1">Find the test order with the largest absolute error.</li>
+            <li data-i18n="challenge2">Explain at least two possible reasons why the model missed that case.</li>
+            <li data-i18n="challenge3">Propose one new variable that could reduce the error and justify why it would help.</li>
+            <li data-i18n="challenge4">Decide whether you would trust the model to promise an exact arrival time to a customer.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footerText">Generative AI course notebook</span>
+      <a href="../../">dialvebe.github.io/GenAi</a>
+    </footer>
+
+    <script src="clase-02.js?v=20260811-1"></script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-const VERSION = "20260809-1";
+const VERSION = "20260811-1";
 
 const ui = {
   en: {
@@ -29,6 +29,10 @@ const ui = {
     class01Title: "What does it mean for a machine to create?",
     class01Text:
       "A case-driven route through AI, Machine Learning, Generative AI, real applications, and risks.",
+    class02Number: "Class 02",
+    class02Title: "Where is my burger?",
+    class02Text:
+      "Linear regression with delivery data, model evaluation, preprocessing, and pipelines.",
     indexTitle: "Jump to",
     footerText: "Generative AI course notebook",
     labels: {
@@ -67,6 +71,10 @@ const ui = {
     class01Title: "¿Qué significa que una máquina pueda crear?",
     class01Text:
       "Una ruta basada en casos sobre IA, Machine Learning, IA Generativa, aplicaciones reales y riesgos.",
+    class02Number: "Clase 02",
+    class02Title: "¿Dónde está mi hamburguesa?",
+    class02Text:
+      "Regresión lineal con datos de entregas, evaluación del modelo, preprocesamiento y pipelines.",
     indexTitle: "Ir a",
     footerText: "Cuaderno del curso de IA Generativa",
     labels: {
