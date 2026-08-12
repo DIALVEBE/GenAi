@@ -9,7 +9,7 @@
     />
     <title>Generative AI | Course Notebook</title>
     <link rel="preload" href="assets/genai-hero.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20260811-1" />
+    <link rel="stylesheet" href="styles.css?v=20260811-2" />
   </head>
   <body>
     <header class="site-header">
@@ -92,17 +92,28 @@
           <p class="eyebrow" data-i18n="classesLabel">Weekly notebook</p>
           <h2 id="classes-title" data-i18n="classesTitle">Class pages</h2>
         </div>
-        <div class="class-list">
-          <a class="class-card" href="clases/clase-01/">
+        <div class="class-toc" aria-label="Class table of contents">
+          <div class="class-toc-head">
+            <span data-i18n="classTocNumber">Class</span>
+            <span data-i18n="classTocTitle">Title</span>
+            <span data-i18n="classTocFocus">Focus</span>
+            <span data-i18n="classTocPractice">Practice</span>
+            <span data-i18n="classTocOpen">Open</span>
+          </div>
+          <article class="class-toc-row">
             <span class="class-number" data-i18n="class01Number">Class 01</span>
             <strong data-i18n="class01Title">What does it mean for a machine to create?</strong>
-            <span data-i18n="class01Text">A case-driven route through AI, Machine Learning, Generative AI, real applications, and risks.</span>
-          </a>
-          <a class="class-card" href="clases/clase-02/">
+            <span data-i18n="class01Focus">AI, Machine Learning, and Generative AI</span>
+            <span data-i18n="class01Practice">Classify systems and explain the Laura case.</span>
+            <a class="class-open" href="clases/clase-01/" data-i18n="classOpen01">Open</a>
+          </article>
+          <article class="class-toc-row">
             <span class="class-number" data-i18n="class02Number">Class 02</span>
             <strong data-i18n="class02Title">Where is my burger?</strong>
-            <span data-i18n="class02Text">Linear regression with delivery data, model evaluation, preprocessing, and pipelines.</span>
-          </a>
+            <span data-i18n="class02Focus">Linear regression and numeric prediction</span>
+            <span data-i18n="class02Practice">Build and evaluate a delivery-time model.</span>
+            <a class="class-open" href="clases/clase-02/" data-i18n="classOpen02">Open</a>
+          </article>
         </div>
       </section>
     </main>
@@ -112,6 +123,6 @@
       <a href="https://github.com/DIALVEBE/GenAi">github.com/DIALVEBE/GenAi</a>
     </footer>
 
-    <script src="script.js?v=20260811-1"></script>
+    <script src="script.js?v=20260811-2"></script>
   </body>
 </html>

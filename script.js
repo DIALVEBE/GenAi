@@ -1,4 +1,4 @@
-const VERSION = "20260811-1";
+const VERSION = "20260811-2";
 
 const ui = {
   en: {
@@ -25,14 +25,25 @@ const ui = {
     topicsTitle: "Student notebook",
     classesLabel: "Weekly notebook",
     classesTitle: "Class pages",
+    classTocNumber: "Class",
+    classTocTitle: "Title",
+    classTocFocus: "Focus",
+    classTocPractice: "Practice",
+    classTocOpen: "Open",
     class01Number: "Class 01",
     class01Title: "What does it mean for a machine to create?",
     class01Text:
       "A case-driven route through AI, Machine Learning, Generative AI, real applications, and risks.",
+    class01Focus: "AI, Machine Learning, and Generative AI",
+    class01Practice: "Classify systems and explain the Laura case.",
+    classOpen01: "Open",
     class02Number: "Class 02",
     class02Title: "Where is my burger?",
     class02Text:
       "Linear regression with delivery data, model evaluation, preprocessing, and pipelines.",
+    class02Focus: "Linear regression and numeric prediction",
+    class02Practice: "Build and evaluate a delivery-time model.",
+    classOpen02: "Open",
     indexTitle: "Jump to",
     footerText: "Generative AI course notebook",
     labels: {
@@ -67,14 +78,25 @@ const ui = {
     topicsTitle: "Cuaderno del estudiante",
     classesLabel: "Cuaderno semanal",
     classesTitle: "Páginas de clase",
+    classTocNumber: "Clase",
+    classTocTitle: "Título",
+    classTocFocus: "Foco",
+    classTocPractice: "Práctica",
+    classTocOpen: "Abrir",
     class01Number: "Clase 01",
     class01Title: "¿Qué significa que una máquina pueda crear?",
     class01Text:
       "Una ruta basada en casos sobre IA, Machine Learning, IA Generativa, aplicaciones reales y riesgos.",
+    class01Focus: "IA, Machine Learning e IA Generativa",
+    class01Practice: "Clasificar sistemas y explicar el caso Laura.",
+    classOpen01: "Abrir",
     class02Number: "Clase 02",
     class02Title: "¿Dónde está mi hamburguesa?",
     class02Text:
       "Regresión lineal con datos de entregas, evaluación del modelo, preprocesamiento y pipelines.",
+    class02Focus: "Regresión lineal y predicción numérica",
+    class02Practice: "Construir y evaluar un modelo de tiempo de entrega.",
+    classOpen02: "Abrir",
     indexTitle: "Ir a",
     footerText: "Cuaderno del curso de IA Generativa",
     labels: {
