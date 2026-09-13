@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Class 03 notebook: neural networks with TensorFlow Playground, weights, layers, activations, loss, regularization, and generalization."
+    />
+    <title>Class 03 | Neural Networks with TensorFlow Playground</title>
+    <link rel="stylesheet" href="../../styles.css?v=20260913-1" />
+    <link rel="stylesheet" href="clase-03.css?v=20260913-1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Generative AI home">
+        <span class="brand-mark">GAI</span>
+        <span>Generative AI</span>
+      </a>
+      <nav class="top-nav" aria-label="Class navigation">
+        <a href="../../" data-i18n="navHome">Home</a>
+        <a href="#route" data-i18n="navRoute">Route</a>
+        <a href="#notebook" data-i18n="navNotebook">Notebook</a>
+        <a href="#experiments" data-i18n="navExperiments">Experiments</a>
+        <a href="#checkpoint" data-i18n="navCheckpoint">Checkpoint</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language switch">
+        <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main id="top" class="class-page playground-page">
+      <section class="class-hero playground-hero">
+        <div class="class-hero-copy">
+          <p class="eyebrow" data-i18n="classLabel">Class 03</p>
+          <h1 data-i18n="heroTitle">How does a neural network learn?</h1>
+          <p class="hero-text" data-i18n="heroText">
+            Use TensorFlow Playground to see how data, weights, layers, activations, loss, and regularization shape a neural network.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="https://playground.tensorflow.org/" rel="noreferrer" data-i18n="openPlayground">Open Playground</a>
+            <a class="secondary-action" href="#experiments" data-i18n="startExperiments">Start experiments</a>
+          </div>
+        </div>
+        <div class="network-stage" aria-label="Neural network visual preview">
+          <div class="stage-grid" aria-hidden="true">
+            <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+          </div>
+          <div class="stage-nodes" aria-hidden="true">
+            <span class="node input n1">&nbsp;</span>
+            <span class="node input n2">&nbsp;</span>
+            <span class="node hidden n3">&nbsp;</span>
+            <span class="node hidden n4">&nbsp;</span>
+            <span class="node output n5">&nbsp;</span>
+            <span class="wire w1">&nbsp;</span>
+            <span class="wire w2">&nbsp;</span>
+            <span class="wire w3">&nbsp;</span>
+            <span class="wire w4">&nbsp;</span>
+          </div>
+          <div class="loss-chip">
+            <span data-i18n="lossChip">loss</span>
+            <strong>0.12</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="class-intro" aria-labelledby="outcome-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="outcomeLabel">Session goal</p>
+          <h2 id="outcome-title" data-i18n="outcomeTitle">Learn by changing the model</h2>
+        </div>
+        <div class="competency-card">
+          <p data-i18n="competencyText">
+            Explain how a neural network learns by connecting data, weights, bias, activations, hidden layers, loss, backpropagation, optimization, regularization, and generalization.
+          </p>
+        </div>
+      </section>
+
+      <section class="class-shell" id="route" aria-labelledby="route-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="routeLabel">Notebook route</p>
+          <h2 id="route-title" data-i18n="routeTitle">From visual experiment to training logic</h2>
+        </div>
+        <div class="route-grid" id="routeGrid"></div>
+      </section>
+
+      <section class="topics-shell class-shell" id="notebook" aria-labelledby="notebook-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="notebookLabel">Student notebook</p>
+          <h2 id="notebook-title" data-i18n="notebookTitle">Neural networks with TensorFlow Playground</h2>
+        </div>
+
+        <div class="class-layout">
+          <aside class="topic-index class-index" aria-label="Class index">
+            <div class="index-title" data-i18n="indexTitle">Jump to</div>
+            <div id="classIndex"></div>
+          </aside>
+
+          <div class="class-sections" id="lessonSections"></div>
+        </div>
+      </section>
+
+      <section class="topics-shell class-shell" id="experiments" aria-labelledby="experiments-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="experimentsLabel">Playground lab</p>
+          <h2 id="experiments-title" data-i18n="experimentsTitle">Run controlled changes</h2>
+        </div>
+        <div class="experiment-grid" id="experimentGrid"></div>
+      </section>
+
+      <section class="topics-shell class-shell" id="checkpoint" aria-labelledby="checkpoint-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="checkpointLabel">Checkpoint</p>
+          <h2 id="checkpoint-title" data-i18n="checkpointTitle">What you should be able to explain</h2>
+        </div>
+        <div class="check-card checkpoint-card">
+          <ol id="checkpointList"></ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footerText">Generative AI course notebook</span>
+      <a href="../../">dialvebe.github.io/GenAi</a>
+    </footer>
+
+    <script src="clase-03.js?v=20260913-1"></script>
+  </body>
+</html>

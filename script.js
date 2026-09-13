@@ -1,4 +1,4 @@
-const VERSION = "20260811-2";
+const VERSION = "20260913-1";
 
 const ui = {
   en: {
@@ -44,6 +44,13 @@ const ui = {
     class02Focus: "Linear regression and numeric prediction",
     class02Practice: "Build and evaluate a delivery-time model.",
     classOpen02: "Open",
+    class03Number: "Class 03",
+    class03Title: "How does a neural network learn?",
+    class03Text:
+      "Neural networks with TensorFlow Playground, weights, layers, activations, loss, and regularization.",
+    class03Focus: "Neural networks with TensorFlow Playground",
+    class03Practice: "Experiment with weights, layers, activations, loss, and regularization.",
+    classOpen03: "Open",
     indexTitle: "Jump to",
     footerText: "Generative AI course notebook",
     labels: {
@@ -97,6 +104,13 @@ const ui = {
     class02Focus: "Regresión lineal y predicción numérica",
     class02Practice: "Construir y evaluar un modelo de tiempo de entrega.",
     classOpen02: "Abrir",
+    class03Number: "Clase 03",
+    class03Title: "¿Cómo aprende una red neuronal?",
+    class03Text:
+      "Redes neuronales con TensorFlow Playground, pesos, capas, activaciones, loss y regularización.",
+    class03Focus: "Redes neuronales con TensorFlow Playground",
+    class03Practice: "Experimentar con pesos, capas, activaciones, loss y regularización.",
+    classOpen03: "Abrir",
     indexTitle: "Ir a",
     footerText: "Cuaderno del curso de IA Generativa",
     labels: {
