@@ -1,4 +1,4 @@
-const VERSION = "20260809-1";
+const VERSION = "20261025-1";
 
 const route = {
   en: [
@@ -292,12 +292,12 @@ const lessons = {
 
 const text = {
   en: {
-    pageTitle: "Class 01 | What can a machine create?",
+    pageTitle: "What can a machine create? | Generative AI",
     navHome: "Home",
     navRoute: "Route",
     navNotebook: "Notebook",
     navTicket: "Ticket",
-    classLabel: "Class 01",
+    classLabel: "Foundations",
     heroTitle: "What does it mean for a machine to create?",
     heroText:
       "Start with a person who seems real, test explanations, and build criteria for Artificial Intelligence, Machine Learning, and Generative AI.",
@@ -352,12 +352,12 @@ const text = {
     },
   },
   es: {
-    pageTitle: "Clase 01 | ¿Qué puede crear una máquina?",
+    pageTitle: "¿Qué puede crear una máquina? | IA Generativa",
     navHome: "Inicio",
     navRoute: "Ruta",
     navNotebook: "Cuaderno",
     navTicket: "Ticket",
-    classLabel: "Clase 01",
+    classLabel: "Fundamentos",
     heroTitle: "¿Qué significa que una máquina pueda crear?",
     heroText:
       "Empieza con una persona que parece real, pon a prueba explicaciones y construye criterios para Inteligencia Artificial, Machine Learning e IA Generativa.",

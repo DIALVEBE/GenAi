@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore how convolutional neural networks transform image pixels into useful visual features with the Pixel laboratory." />
+    <title>Pixel Learns to See | Generative AI</title>
+    <link rel="stylesheet" href="../../styles.css?v=20261025-2" />
+    <link rel="stylesheet" href="clase-04.css?v=20261025-1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Generative AI home">
+        <span class="brand-mark">GAI</span><span>Generative AI</span>
+      </a>
+      <nav class="top-nav" aria-label="Learning navigation">
+        <a href="../../" data-i18n="navHome">Home</a>
+        <a href="#concepts" data-i18n="navConcepts">Concepts</a>
+        <a href="#controls" data-i18n="navControls">Pixel lab</a>
+        <a href="#code" data-i18n="navCode">Code</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language switch">
+        <button class="lang-button is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-button" type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </header>
+
+    <main class="cnn-page" id="top">
+      <section class="class-hero cnn-hero">
+        <div class="class-hero-copy">
+          <p class="eyebrow" data-i18n="heroLabel">Computer vision · Pixel laboratory</p>
+          <h1 data-i18n="heroTitle">Pixel learns to see</h1>
+          <p class="hero-text" data-i18n="heroText">Discover how convolutional neural networks transform pixels into patterns, features, and spatial representations.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#concepts" data-i18n="exploreConcepts">Explore the concepts</a>
+            <a class="secondary-action" href="#code" data-i18n="openCode">Get the Python lab</a>
+          </div>
+        </div>
+        <div class="pixel-hero" role="img" data-i18n-aria="pixelVisualLabel" aria-label="A pixel grid with a convolution filter highlighting image features">
+          <div class="pixel-art" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="filter-frame" aria-hidden="true"></div>
+          <div class="pixel-caption"><span data-i18n="featureMapLabel">FEATURE MAP</span><strong>16 × 16 → 7 × 7</strong></div>
+        </div>
+      </section>
+
+      <section class="class-intro" aria-labelledby="goal-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="goalLabel">Learning goal</p>
+          <h2 id="goal-title" data-i18n="goalTitle">Connect each operation to the information it preserves</h2>
+        </div>
+        <div class="competency-card"><p data-i18n="goalText">Explain how a CNN processes an image by relating local filters, feature maps, stride, padding, ReLU, pooling, and noise, and distinguish fixed filters from weights learned during training.</p></div>
+      </section>
+
+      <section class="class-shell" id="concepts" aria-labelledby="concept-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="notebookLabel">Learning notebook</p>
+          <h2 id="concept-title" data-i18n="conceptTitle">From pixels to visual features</h2>
+        </div>
+        <div class="class-layout cnn-layout">
+          <aside class="topic-index class-index" aria-label="Learning index">
+            <div class="index-title" data-i18n="indexTitle">Jump to</div>
+            <div id="cnnIndex"></div>
+          </aside>
+          <div class="class-sections" id="cnnSections"></div>
+        </div>
+      </section>
+
+      <section class="class-shell" id="controls" aria-labelledby="controls-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="controlsLabel">Pixel laboratory</p>
+          <h2 id="controls-title" data-i18n="controlsTitle">Explore one change at a time</h2>
+          <p class="section-lead" data-i18n="controlsLead">The program generates four geometric images locally. Use the controls to connect each setting with the maps you observe.</p>
+        </div>
+        <div class="control-grid" id="controlGrid"></div>
+      </section>
+
+      <section class="class-shell" id="code" aria-labelledby="code-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="codeLabel">Runnable project</p>
+          <h2 id="code-title" data-i18n="codeTitle">Run Pixel on your computer</h2>
+          <p class="section-lead" data-i18n="codeLead">The lab uses Python, NumPy, and Pygame. It runs on CPU and creates its images without an external dataset.</p>
+        </div>
+        <div class="setup-grid" id="setupGrid"></div>
+        <div class="code-panel-shell">
+          <div class="code-heading"><div><span class="code-dot"></span><strong>main.py</strong><span data-i18n="fullSourceLabel">Complete source code</span><a href="main.py" download data-i18n="download">Download main.py</a></div><button class="copy-button" type="button" id="copyMain" data-i18n="copyCode">Copy code</button></div>
+          <pre class="code-panel"><code id="mainCode" data-i18n="loadingCode">Loading the complete program…</code></pre>
+          <p class="code-status" id="codeStatus" role="status" aria-live="polite" data-i18n="codeStatus">The complete student-ready source is included with this page.</p>
+        </div>
+      </section>
+
+      <section class="class-shell" id="checkpoint" aria-labelledby="checkpoint-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="checkpointLabel">Check your understanding</p>
+          <h2 id="checkpoint-title" data-i18n="checkpointTitle">Explain what changed and what was lost</h2>
+        </div>
+        <div class="check-card checkpoint-card"><ul id="checkpointList"></ul></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span data-i18n="footerText">Generative AI learning notebook</span><a href="../../">dialvebe.github.io/GenAi</a></footer>
+    <script src="clase-04.js?v=20261025-1"></script>
+  </body>
+</html>

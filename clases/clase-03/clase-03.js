@@ -1,4 +1,4 @@
-const VERSION = "20260913-1";
+const VERSION = "20260913-2";
 
 const snippets = {
   neuron: String.raw`z = x1*w1 + x2*w2 + x3*w3 + b
@@ -520,17 +520,18 @@ const checkpoints = {
 
 const text = {
   en: {
-    pageTitle: "Class 03 | Neural Networks with TensorFlow Playground",
+    pageTitle: "Neural Networks with TensorFlow Playground | Generative AI",
     navHome: "Home",
     navRoute: "Route",
     navNotebook: "Notebook",
     navExperiments: "Experiments",
     navCheckpoint: "Checkpoint",
-    classLabel: "Class 03",
+    classLabel: "Neural networks",
     heroTitle: "How does a neural network learn?",
     heroText:
       "Use TensorFlow Playground to see how data, weights, layers, activations, loss, and regularization shape a neural network.",
     openPlayground: "Open Playground",
+    openRepository: "View repository",
     startExperiments: "Start experiments",
     lossChip: "loss",
     outcomeLabel: "Session goal",
@@ -553,17 +554,18 @@ const text = {
     copied: "Copied",
   },
   es: {
-    pageTitle: "Clase 03 | Redes neuronales con TensorFlow Playground",
+    pageTitle: "Redes neuronales con TensorFlow Playground | IA Generativa",
     navHome: "Inicio",
     navRoute: "Ruta",
     navNotebook: "Cuaderno",
     navExperiments: "Experimentos",
     navCheckpoint: "Cierre",
-    classLabel: "Clase 03",
+    classLabel: "Redes neuronales",
     heroTitle: "¿Cómo aprende una red neuronal?",
     heroText:
       "Usa TensorFlow Playground para ver cómo datos, pesos, capas, activaciones, loss y regularización moldean una red neuronal.",
     openPlayground: "Abrir Playground",
+    openRepository: "Ver repositorio",
     startExperiments: "Iniciar experimentos",
     lossChip: "loss",
     outcomeLabel: "Meta de la sesión",

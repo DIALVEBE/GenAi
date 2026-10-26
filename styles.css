@@ -277,7 +277,7 @@ h3 {
 .class-toc-head,
 .class-toc-row {
   display: grid;
-  grid-template-columns: minmax(5.8rem, 0.55fr) minmax(12rem, 1.35fr) minmax(11rem, 1fr) minmax(13rem, 1.15fr) minmax(5.2rem, 0.45fr);
+  grid-template-columns: minmax(12rem, 1.35fr) minmax(11rem, 1fr) minmax(13rem, 1.15fr) minmax(5.2rem, 0.45fr);
   gap: 0.75rem;
   align-items: center;
   min-width: 0;

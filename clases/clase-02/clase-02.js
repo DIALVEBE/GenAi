@@ -1,4 +1,4 @@
-const VERSION = "20260811-2";
+const VERSION = "20261025-1";
 
 const code = {
   install: String.raw`!pip -q install kagglehub
@@ -573,13 +573,13 @@ const lessons = {
 
 const text = {
   en: {
-    pageTitle: "Class 02 | Linear Regression for Delivery Time",
+    pageTitle: "Linear Regression for Delivery Time | Generative AI",
     navHome: "Home",
     navRoute: "Route",
     navNotebook: "Notebook",
     navChallenge: "Challenge",
     navResources: "Resources",
-    classLabel: "Class 02",
+    classLabel: "Regression",
     heroTitle: "Where is my burger?",
     heroText:
       "Build a Machine Learning model that estimates food delivery time and learn why prediction is more than drawing a line.",
@@ -617,13 +617,13 @@ const text = {
     copied: "Copied",
   },
   es: {
-    pageTitle: "Clase 02 | Regresión lineal para tiempos de entrega",
+    pageTitle: "Regresión lineal para tiempos de entrega | IA Generativa",
     navHome: "Inicio",
     navRoute: "Ruta",
     navNotebook: "Cuaderno",
     navChallenge: "Reto",
     navResources: "Recursos",
-    classLabel: "Clase 02",
+    classLabel: "Regresión",
     heroTitle: "¿Dónde está mi hamburguesa?",
     heroText:
       "Construye un modelo de Machine Learning que estima el tiempo de entrega y aprende por qué predecir es más que dibujar una recta.",
