@@ -1,4 +1,4 @@
-const VERSION = "20261025-1";
+const VERSION = "20261025-2";
 
 const copy = {
   en: {
@@ -9,7 +9,7 @@ const copy = {
     exploreConcepts: "Explore the concepts", openCode: "Get the Python lab", featureMapLabel: "FEATURE MAP",
     goalLabel: "Learning goal", goalTitle: "Connect each operation to the information it preserves",
     goalText: "Explain how a CNN processes an image by relating local filters, feature maps, stride, padding, ReLU, pooling, and noise, and distinguish fixed filters from weights learned during training.",
-    notebookLabel: "Learning notebook", conceptTitle: "From pixels to visual features", indexTitle: "Jump to",
+    notebookLabel: "Learning notebook", conceptTitle: "From pixels to visual features", contentsTitle: "In this page",
     controlsLabel: "Pixel laboratory", controlsTitle: "Explore one change at a time",
     controlsLead: "The program generates four geometric images locally. Use the controls to connect each setting with the maps you observe.",
     codeLabel: "Runnable project", codeTitle: "Run Pixel on your computer",
@@ -43,7 +43,7 @@ const copy = {
     exploreConcepts: "Explorar los conceptos", openCode: "Obtener el laboratorio en Python", featureMapLabel: "MAPA DE CARACTERÍSTICAS",
     goalLabel: "Objetivo de aprendizaje", goalTitle: "Relaciona cada operación con la información que conserva",
     goalText: "Explica cómo una CNN procesa una imagen al relacionar filtros locales, mapas de características, stride, padding, ReLU, pooling y ruido; distingue los filtros fijos de los pesos aprendidos durante el entrenamiento.",
-    notebookLabel: "Cuaderno de aprendizaje", conceptTitle: "De los píxeles a las características visuales", indexTitle: "Ir a",
+    notebookLabel: "Cuaderno de aprendizaje", conceptTitle: "De los píxeles a las características visuales", contentsTitle: "Contenido de la página",
     controlsLabel: "Laboratorio Pixel", controlsTitle: "Explora un cambio a la vez",
     controlsLead: "El programa genera localmente cuatro imágenes geométricas. Usa los controles para relacionar cada ajuste con los mapas que observas.",
     codeLabel: "Proyecto ejecutable", codeTitle: "Ejecuta Pixel en tu computador",
