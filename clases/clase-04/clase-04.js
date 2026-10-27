@@ -16,7 +16,7 @@ const copy = {
     codeLabel: "Runnable project", codeTitle: "Run Pixel on your computer",
     codeLead: "The lab uses Python, NumPy, and Pygame. It runs on CPU and creates its images without an external dataset. Opening the Pygame window requires a graphical desktop session.",
     fullSourceLabel: "Complete source code", copyCode: "Copy code", loadingCode: "Loading the complete program…",
-    codeStatus: "The complete student-ready source is included with this page.", checkpointLabel: "Check your understanding",
+    checkpointLabel: "Check your understanding",
     checkpointTitle: "Explain what changed and what was lost", footerText: "Generative AI learning notebook",
     copyReady: "Code copied.", copyWait: "The program is still loading.",
     codeUnavailable: "The source could not be loaded. Open main.py directly.", download: "Download main.py", copyShort: "Copy",
@@ -51,7 +51,7 @@ const copy = {
     codeLabel: "Proyecto ejecutable", codeTitle: "Ejecuta Pixel en tu computador",
     codeLead: "El laboratorio utiliza Python, NumPy y Pygame. Funciona en CPU y crea sus imágenes sin un conjunto de datos externo. Para abrir la ventana de Pygame necesitas una sesión gráfica de escritorio.",
     fullSourceLabel: "Código fuente completo", copyCode: "Copiar código", loadingCode: "Cargando el programa completo…",
-    codeStatus: "El código completo, listo para estudiantes, está incluido en esta página.", checkpointLabel: "Comprueba tu comprensión",
+    checkpointLabel: "Comprueba tu comprensión",
     checkpointTitle: "Explica qué cambió y qué información se perdió", footerText: "Cuaderno de aprendizaje de IA Generativa",
     copyReady: "Código copiado.", copyWait: "El programa todavía se está cargando.",
     codeUnavailable: "No se pudo cargar el código. Abre main.py directamente.", download: "Descargar main.py", copyShort: "Copiar",
@@ -277,7 +277,7 @@ function render() {
   renderSetup();
   renderChecks();
   document.querySelector("#mainCode").textContent = mainSource || copy[lang].codeUnavailable;
-  document.querySelector("#codeStatus").textContent = mainSource ? copy[lang].codeStatus : copy[lang].codeUnavailable;
+  document.querySelector("#codeStatus").textContent = mainSource ? "" : copy[lang].codeUnavailable;
 }
 
 async function copyText(text, button) {
