@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore how a small neural network predicts the next human move in rock-paper-scissors and learns from each round." />
+    <title>Can a Neural Network Predict Your Next Move? | Generative AI</title>
+    <link rel="stylesheet" href="../../styles.css?v=20261027-1" />
+    <link rel="stylesheet" href="../clase-03/clase-03.css?v=20260913-2" />
+    <link rel="stylesheet" href="clase-05.css?v=20261027-1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Generative AI home">
+        <span class="brand-mark">GAI</span><span>Generative AI</span>
+      </a>
+      <nav class="top-nav" aria-label="Class navigation" data-i18n-aria="navAria">
+        <a href="../../" data-i18n="navHome">Home</a>
+        <a href="#notebook" data-i18n="navNotebook">Notebook</a>
+        <a href="#code" data-i18n="navCode">Code</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language switch" data-i18n-aria="languageSwitch">
+        <button class="lang-button is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-button" type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </header>
+
+    <main class="class-page rps-page" id="top">
+      <section class="class-hero rps-hero">
+        <div class="class-hero-copy">
+          <p class="eyebrow" data-i18n="heroLabel">Neural networks · Rock-paper-scissors</p>
+          <h1 data-i18n="heroTitle">Can a neural network predict your next move?</h1>
+          <p class="hero-text" data-i18n="heroText">Follow a small neural network as it reads a player's recent choices, estimates the next one, and updates from each new round.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#notebook" data-i18n="explore">Explore the model</a>
+            <a class="secondary-action" href="#code" data-i18n="getCode">Get the Python files</a>
+          </div>
+        </div>
+        <div class="rps-visual" role="img" data-i18n-aria="visualLabel" aria-label="A neural network maps five past moves to probabilities for the next move">
+          <div class="move-history"><span>0</span><span>1</span><span>2</span><span>0</span><span>1</span></div>
+          <div class="network-layers" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="probability-bars"><span>0 <i></i></span><span>1 <i></i></span><span>2 <i></i></span></div>
+          <p data-i18n="visualCaption">5 recent moves → 3 estimated probabilities</p>
+        </div>
+      </section>
+
+      <section class="class-intro" aria-labelledby="goal-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="goalLabel">Learning goal</p>
+          <h2 id="goal-title" data-i18n="goalTitle">Separate prediction, decision, and learning</h2>
+        </div>
+        <div class="competency-card"><p data-i18n="goalText">Explain how the game encodes recent moves, produces three probabilities, selects a counter-move, and trains on the human move only after that move is known.</p></div>
+      </section>
+
+      <section class="class-shell" id="notebook" aria-labelledby="notebook-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="notebookLabel">Student notebook</p>
+          <h2 id="notebook-title" data-i18n="notebookTitle">A neural network learns a short pattern</h2>
+          <p class="section-lead" data-i18n="notebookLead">The model predicts the human player's next move. The game then uses a separate rule to choose a move that beats the most likely option.</p>
+        </div>
+        <nav class="rps-toc" aria-label="Notebook contents" data-i18n-aria="contentsAria">
+          <div class="index-title" data-i18n="contentsTitle">In this page</div>
+          <div id="classIndex"></div>
+        </nav>
+        <div class="class-sections rps-sections" id="lessonSections"></div>
+      </section>
+
+      <section class="class-shell code-section" id="code" aria-labelledby="code-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="codeLabel">Runnable project</p>
+          <h2 id="code-title" data-i18n="codeTitle">Run the neural arcade</h2>
+          <p class="section-lead" data-i18n="codeLead">Download both Python files into the same folder. The comments explain the model settings and function parameters in the selected language.</p>
+        </div>
+        <div class="setup-panel">
+          <div class="code-heading"><strong data-i18n="setupTitle">Install and run</strong><button class="copy-button" type="button" data-copy="setup" data-i18n="copy">Copy</button></div>
+          <pre><code id="setupCode"></code></pre>
+          <p class="copy-status" role="status" aria-live="polite"></p>
+        </div>
+        <div class="source-grid">
+          <article class="code-panel-shell">
+            <div class="code-heading"><strong>main.py</strong><div><a class="download-link" id="downloadMain" href="code/en/main.py" download data-i18n="download">Download</a><button class="copy-button" type="button" data-copy="main" data-i18n="copy" disabled>Copy</button></div></div>
+            <pre><code id="mainSource"></code></pre>
+            <p class="copy-status" id="mainStatus" role="status" aria-live="polite"></p>
+          </article>
+          <article class="code-panel-shell">
+            <div class="code-heading"><strong>neural.py</strong><div><a class="download-link" id="downloadNeural" href="code/en/neural.py" download data-i18n="download">Download</a><button class="copy-button" type="button" data-copy="neural" data-i18n="copy" disabled>Copy</button></div></div>
+            <pre><code id="neuralSource"></code></pre>
+            <p class="copy-status" id="neuralStatus" role="status" aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="class-shell" id="checkpoint" aria-labelledby="checkpoint-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="checkLabel">Check your understanding</p>
+          <h2 id="checkpoint-title" data-i18n="checkTitle">Explain what the model can and cannot learn</h2>
+        </div>
+        <div class="check-card checkpoint-card"><ol id="checkpointList"></ol></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span data-i18n="footerText">Generative AI course notebook</span><a href="../../">dialvebe.github.io/GenAi</a></footer>
+    <script src="clase-05.js?v=20261027-1"></script>
+  </body>
+</html>
