@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Explore how a small neural network predicts the next human move in rock-paper-scissors and learns from each round." />
-    <title>Can a Neural Network Predict Your Next Move? | Generative AI</title>
-    <link rel="stylesheet" href="../../styles.css?v=20261027-1" />
+    <meta name="description" content="Explore two neural-network projects: rock-paper-scissors prediction and a CNN arcade that learns to classify shapes." />
+    <title>Two Neural Network Projects | Generative AI</title>
+    <link rel="stylesheet" href="../../styles.css?v=20261027-2" />
     <link rel="stylesheet" href="../clase-03/clase-03.css?v=20260913-2" />
-    <link rel="stylesheet" href="clase-05.css?v=20261027-1" />
+    <link rel="stylesheet" href="clase-05.css?v=20261027-2" />
   </head>
   <body>
     <header class="site-header">
@@ -16,8 +16,8 @@
       </a>
       <nav class="top-nav" aria-label="Class navigation" data-i18n-aria="navAria">
         <a href="../../" data-i18n="navHome">Home</a>
-        <a href="#notebook" data-i18n="navNotebook">Notebook</a>
-        <a href="#code" data-i18n="navCode">Code</a>
+        <a href="#rps-project" data-i18n="navRps">Rock-paper-scissors</a>
+        <a href="#arcade-project" data-i18n="navArcade">CNN arcade</a>
       </nav>
       <div class="language-switch" role="group" aria-label="Language switch" data-i18n-aria="languageSwitch">
         <button class="lang-button is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -26,6 +26,11 @@
     </header>
 
     <main class="class-page rps-page" id="top">
+      <nav class="project-switcher" aria-label="Projects" data-i18n-aria="projectsAria">
+        <a href="#rps-project" data-i18n="projectRps">Project 1 · Rock-paper-scissors</a>
+        <a href="#arcade-project" data-i18n="projectArcade">Project 2 · Pixel CNN arcade</a>
+      </nav>
+      <div id="rps-project">
       <section class="class-hero rps-hero">
         <div class="class-hero-copy">
           <p class="eyebrow" data-i18n="heroLabel">Neural networks · Rock-paper-scissors</p>
@@ -68,7 +73,7 @@
       <section class="class-shell code-section" id="code" aria-labelledby="code-title">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="codeLabel">Runnable project</p>
-          <h2 id="code-title" data-i18n="codeTitle">Run the neural arcade</h2>
+          <h2 id="code-title" data-i18n="codeTitle">Run the rock-paper-scissors project</h2>
           <p class="section-lead" data-i18n="codeLead">Download both Python files into the same folder. The comments explain the model settings and function parameters in the selected language.</p>
         </div>
         <div class="setup-panel">
@@ -97,9 +102,40 @@
         </div>
         <div class="check-card checkpoint-card"><ol id="checkpointList"></ol></div>
       </section>
+      </div>
+
+      <section class="arcade-project" id="arcade-project" aria-labelledby="arcade-title">
+        <header class="arcade-heading">
+          <p class="eyebrow" data-i18n="arcadeLabel">Project 2 · Convolutional neural network</p>
+          <h2 id="arcade-title" data-i18n="arcadeTitle">Pixel learns to classify shapes</h2>
+          <p class="section-lead" data-i18n="arcadeIntro">This is a separate project from rock-paper-scissors. Pixel trains a CNN to classify synthetic squares, crosses, diagonals, and circles.</p>
+        </header>
+        <div class="arcade-flow" role="img" data-i18n-aria="arcadeFlowAria">
+          <div><strong data-i18n="flowInput">16 × 16 image</strong><span data-i18n="flowInputSub">grayscale pixels</span></div><i aria-hidden="true">→</i>
+          <div><strong data-i18n="flowConv">Convolution</strong><span data-i18n="flowConvSub">learnable filters</span></div><i aria-hidden="true">→</i>
+          <div><strong data-i18n="flowFeatures">ReLU + pooling</strong><span data-i18n="flowFeaturesSub">feature maps</span></div><i aria-hidden="true">→</i>
+          <div><strong data-i18n="flowOutput">4 classes</strong><span data-i18n="flowOutputSub">shape prediction</span></div>
+        </div>
+        <div class="arcade-content" id="arcadeContent"></div>
+        <section class="class-shell code-section arcade-code" id="arcade-code" aria-labelledby="arcade-code-title">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="arcadeCodeLabel">Pixel CNN code</p>
+            <h3 id="arcade-code-title" data-i18n="arcadeCodeTitle">Download or copy the arcade project</h3>
+            <p class="section-lead" data-i18n="arcadeCodeLead">This standalone file belongs to the shape-classification project. It does not use the rock-paper-scissors files.</p>
+          </div>
+          <div class="setup-panel">
+            <div class="code-heading"><strong data-i18n="arcadeSetupTitle">Install and run Pixel</strong><button class="copy-button" type="button" data-copy="arcadeSetup" data-i18n="copy">Copy</button></div>
+            <pre><code id="arcadeSetupCode"></code></pre><p class="copy-status" id="arcadeSetupStatus" role="status" aria-live="polite"></p>
+          </div>
+          <article class="code-panel-shell">
+            <div class="code-heading"><strong>main_clase5.py</strong><div><a class="download-link" id="downloadArcade" href="code/arcade/main_clase5.py" download data-i18n="download">Download</a><button class="copy-button" type="button" data-copy="arcade" data-i18n="copy" disabled>Copy</button></div></div>
+            <pre><code id="arcadeSource"></code></pre><p class="copy-status" id="arcadeStatus" role="status" aria-live="polite"></p>
+          </article>
+        </section>
+      </section>
     </main>
 
     <footer class="site-footer"><span data-i18n="footerText">Generative AI course notebook</span><a href="../../">dialvebe.github.io/GenAi</a></footer>
-    <script src="clase-05.js?v=20261027-1"></script>
+    <script src="clase-05.js?v=20261027-2"></script>
   </body>
 </html>

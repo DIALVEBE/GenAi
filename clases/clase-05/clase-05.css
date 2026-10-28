@@ -1,4 +1,24 @@
 .rps-page { --rps-cyan: #52e5ec; --rps-lime: #b7f06a; --rps-coral: #ff8b72; }
+.project-switcher { display: flex; flex-wrap: wrap; gap: 0.65rem; width: min(100% - 2rem, 76rem); margin: 1rem auto 2rem; padding: 0.85rem 0; border-block: 1px solid rgba(82, 229, 236, 0.22); }
+.project-switcher a { display: inline-flex; min-height: 2.75rem; align-items: center; padding: 0.55rem 0.85rem; border-left: 2px solid var(--rps-cyan); background: rgba(255,255,255,.04); color: var(--text); text-decoration: none; }
+.project-switcher a:hover, .project-switcher a:focus-visible { border-color: var(--rps-coral); background: rgba(255,139,114,.1); }
+.arcade-project { display: grid; gap: 1.2rem; width: min(100% - 2rem, 76rem); margin: 3.5rem auto 0; }
+.arcade-heading { display: grid; gap: .45rem; }
+.arcade-heading h2 { max-width: 30ch; margin: 0; color: var(--text); font-size: 2.25rem; line-height: 1.15; }
+.arcade-heading .section-lead { max-width: 75ch; }
+.arcade-flow { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: .6rem; padding: clamp(1rem,3vw,1.5rem); border: 1px solid rgba(82,229,236,.25); background: rgba(5,13,27,.72); }
+.arcade-flow > div { display: grid; min-width: 0; gap: .35rem; align-content: start; min-height: 4rem; }
+.arcade-flow strong { color: var(--rps-cyan); line-height: 1.3; }
+.arcade-flow span { color: var(--muted); font-size: .86rem; line-height: 1.4; }
+.arcade-flow > i { color: var(--rps-coral); font-size: 1.4rem; font-style: normal; }
+.arcade-content { display: grid; gap: .8rem; }
+.arcade-theory { min-width: 0; padding: clamp(1rem,2.5vw,1.5rem); border-left: 2px solid rgba(82,229,236,.45); background: rgba(255,255,255,.035); }
+.arcade-theory h3 { margin: 0 0 .5rem; color: var(--rps-cyan); font-size: 1.3rem; line-height: 1.25; }
+.arcade-theory p { max-width: 88ch; margin: 0; color: var(--muted); line-height: 1.72; }
+.cnn-shapes { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .55rem; margin-top: 1rem; padding: 1rem; border: 1px solid rgba(82,229,236,.18); background: rgba(4,14,30,.76); }
+.cnn-shapes span { max-width: 100%; padding: .55rem .7rem; background: rgba(82,229,236,.08); color: var(--text); font: 700 .88rem/1.35 ui-monospace,SFMono-Regular,Consolas,monospace; overflow-wrap: anywhere; }
+.cnn-shapes b { color: var(--rps-coral); }
+.arcade-code { width: 100%; margin: 0; }
 .rps-hero { min-height: min(48rem, calc(100svh - 4rem)); grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr); }
 .rps-hero h1 { max-width: 15ch; font-size: 3.7rem; line-height: 1.04; }
 .rps-visual { position: relative; display: grid; align-content: center; gap: 1.4rem; min-height: clamp(20rem, 38vw, 29rem); padding: 1.5rem; overflow: hidden; border: 1px solid rgba(82, 229, 236, 0.3); background: linear-gradient(145deg, rgba(0, 240, 255, 0.1), rgba(255, 57, 212, 0.09)), rgba(5, 10, 28, 0.82); box-shadow: var(--shadow); }
@@ -81,6 +101,15 @@
 }
 
 @media (max-width: 720px) {
+  .project-switcher { width: calc(100% - 2rem); }
+  .project-switcher a { flex: 1 1 100%; }
+  .arcade-project { width: calc(100% - 2rem); margin-top: 2.5rem; }
+  .arcade-heading h2 { font-size: 1.8rem; }
+  .arcade-flow { grid-template-columns: minmax(0,1fr); gap: .35rem; }
+  .arcade-flow > div { min-height: 0; padding: .4rem .6rem; }
+  .arcade-flow > i { justify-self: center; transform: rotate(90deg); line-height: 1; }
+  .cnn-shapes { gap: .4rem; }
+  .cnn-shapes b { flex: 0 0 100%; text-align: center; transform: rotate(90deg); }
   .rps-hero h1 { max-width: 16ch; font-size: 2.35rem; }
   .rps-page .section-heading h2 { font-size: 1.7rem; }
   .rps-section, #code, #checkpoint { scroll-margin-top: 11rem; }

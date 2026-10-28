@@ -1,9 +1,21 @@
-const VERSION = "20261027-1";
+const VERSION = "20261027-2";
 
 const copy = {
   en: {
-    navHome: "Home", navNotebook: "Notebook", navCode: "Code", navAria: "Class navigation", languageSwitch: "Language switch", contentsAria: "Notebook contents",
-    heroLabel: "Neural networks · Rock-paper-scissors", heroTitle: "Can a neural network predict your next move?",
+    navHome: "Home", navRps: "Rock-paper-scissors", navArcade: "CNN arcade", navAria: "Project navigation", languageSwitch: "Language switch", contentsAria: "Notebook contents", projectsAria: "Project navigation",
+    projectRps: "Project 1 · Rock-paper-scissors", projectArcade: "Project 2 · Pixel CNN arcade",
+    arcadeLabel: "Project 2 · Convolutional neural network", arcadeTitle: "Pixel learns to classify shapes", arcadeIntro: "This is a separate project from rock-paper-scissors. Pixel trains a CNN to classify synthetic squares, crosses, diagonals, and circles.",
+    flowInput: "16 × 16 image", flowInputSub: "grayscale pixels", flowConv: "Convolution", flowConvSub: "learnable filters", flowFeatures: "ReLU + pooling", flowFeaturesSub: "feature maps", flowOutput: "4 classes", flowOutputSub: "shape prediction", arcadeFlowAria: "Flow from a 16 by 16 grayscale image through trainable convolutional layers to a prediction among four shape classes",
+    arcadeCodeLabel: "Pixel CNN code", arcadeCodeTitle: "Download or copy the arcade project", arcadeCodeLead: "This standalone file belongs to the shape-classification project. It does not use the rock-paper-scissors files. Set LANGUAGE to \"en\" or \"es\" in the code to change its interface.", arcadeSetupTitle: "Install and run Pixel", arcadeLoading: "Loading the Pixel project source…", arcadeLoadError: "Could not load the Pixel project source.", arcadeSetup: "uv init --bare\nuv add numpy pygame torch\n# Save the downloaded file as main.py\nuv run main.py",
+    arcadeSections: [
+      { title: "From fixed filters to learned filters", text: "An earlier image-filtering exercise used manually selected kernels. Here, convolution weights are trainable parameters: the model adjusts them through gradient-based updates to reduce classification loss. A CNN does not begin with built-in concepts of circles or crosses; it learns useful visual features from labeled examples." },
+      { title: "The images and four classes", text: "Each sample is a 16 × 16, one-channel grayscale image with pixel values between 0 and 1. The generator varies shape position, size, thickness, and noise. The classes are square, cross, diagonal, and circle. Because they are balanced, a uniform random guess has about 25% expected accuracy." },
+      { title: "Three data splits, three roles", text: "Training uses 400 generated images to update weights. Validation uses 120 separate images to track performance without changing weights. The final 120-image test set stays reserved until training ends; use it as a final check rather than repeatedly tuning the model against it." },
+      { title: "Architecture and tensor sizes", text: "The CNN applies Conv2d(1, 8, 3, padding=1), ReLU, and 2 × 2 max pooling, then Conv2d(8, 16, 3, padding=1), ReLU, and another pooling step. Spatial size changes 16 × 16 → 8 × 8 → 4 × 4. Flattening creates 16 × 4 × 4 = 256 features for a linear layer that returns four class logits." },
+      { title: "How training updates the CNN", text: "For each mini-batch, the model computes logits, CrossEntropyLoss compares them with labels, backpropagation calculates gradients, and Adam updates weights. One epoch is a full pass through the 400 training images, split into batches of 32. CrossEntropyLoss expects logits directly; softmax is used later to display class probabilities." },
+      { title: "Read the interface and test carefully", text: "Press T to start or pause training, R to reset, the arrow keys to browse images, N to add visual noise to the current sample, E to reveal the reserved test results after 25 epochs, and Esc to quit. The central panel shows only one channel from the first convolution. A high training score alone does not establish generalization beyond these synthetic shapes." }
+    ],
+    heroLabel: "Project 1 · Neural networks · Rock-paper-scissors", heroTitle: "Can a neural network predict your next move?",
     heroText: "Follow a small neural network as it reads a player's recent choices, estimates the next one, and updates from each new round.",
     visualLabel: "A neural network maps five past moves to probabilities for the next move", visualCaption: "5 recent moves → 3 estimated probabilities",
     explore: "Explore the model", getCode: "Get the Python files", goalLabel: "Learning goal",
@@ -11,7 +23,7 @@ const copy = {
     goalText: "Explain how the game encodes recent moves, produces three probabilities, selects a counter-move, and trains on the human move only after that move is known.",
     notebookLabel: "Student notebook", notebookTitle: "A neural network learns a short pattern",
     notebookLead: "The model predicts the human player's next move. The game then uses a separate rule to choose a move that beats the most likely option.",
-    contentsTitle: "In this page", codeLabel: "Runnable project", codeTitle: "Run the neural arcade",
+    contentsTitle: "In this project", codeLabel: "Runnable project", codeTitle: "Run the rock-paper-scissors project",
     codeLead: "Download both Python files into the same folder. The comments explain the model settings and function parameters in the selected language.",
     setupTitle: "Install and run", copy: "Copy", download: "Download", copied: "Copied.", copyFailed: "Copy failed. Select the code and copy it.",
     loadError: "Could not load this source file.", checkLabel: "Check your understanding",
@@ -97,8 +109,20 @@ const copy = {
     ]
   },
   es: {
-    navHome: "Inicio", navNotebook: "Cuaderno", navCode: "Código", navAria: "Navegación de la clase", languageSwitch: "Selector de idioma", contentsAria: "Contenido del cuaderno",
-    heroLabel: "Redes neuronales · Piedra, papel o tijera", heroTitle: "¿Puede una red neuronal anticipar tu jugada?",
+    navHome: "Inicio", navRps: "Piedra, papel o tijera", navArcade: "Arcade CNN", navAria: "Navegación de proyectos", languageSwitch: "Selector de idioma", contentsAria: "Contenido del cuaderno", projectsAria: "Navegación de proyectos",
+    projectRps: "Proyecto 1 · Piedra, papel o tijera", projectArcade: "Proyecto 2 · Arcade CNN de Pixel",
+    arcadeLabel: "Proyecto 2 · Red neuronal convolucional", arcadeTitle: "Pixel aprende a clasificar figuras", arcadeIntro: "Este es un proyecto independiente de piedra, papel o tijera. Pixel entrena una CNN para clasificar cuadrados, cruces, diagonales y círculos sintéticos.",
+    flowInput: "Imagen de 16 × 16", flowInputSub: "píxeles en escala de grises", flowConv: "Convolución", flowConvSub: "filtros entrenables", flowFeatures: "ReLU + pooling", flowFeaturesSub: "mapas de características", flowOutput: "4 clases", flowOutputSub: "predicción de figura", arcadeFlowAria: "Flujo desde una imagen en escala de grises de 16 por 16, a través de capas convolucionales entrenables, hasta una predicción entre cuatro clases de figuras",
+    arcadeCodeLabel: "Código de Pixel CNN", arcadeCodeTitle: "Descarga o copia el proyecto arcade", arcadeCodeLead: "Este archivo independiente pertenece al proyecto de clasificación de figuras. No utiliza los archivos de piedra, papel o tijera. Cambia LANGUAGE a \"en\" o \"es\" en el código para cambiar el idioma de la interfaz.", arcadeSetupTitle: "Instala y ejecuta Pixel", arcadeLoading: "Cargando el código del proyecto Pixel…", arcadeLoadError: "No se pudo cargar el código del proyecto Pixel.", arcadeSetup: "uv init --bare\nuv add numpy pygame torch\n# Guarda el archivo descargado como main.py\nuv run main.py",
+    arcadeSections: [
+      { title: "De filtros fijos a filtros aprendidos", text: "En un ejercicio previo de procesamiento de imágenes se usaban kernels seleccionados manualmente. Aquí, los pesos de convolución son parámetros entrenables: el modelo los ajusta mediante gradientes para reducir el error de clasificación. Una CNN no trae incorporados los conceptos de círculo o cruz; aprende características visuales útiles a partir de ejemplos etiquetados." },
+      { title: "Las imágenes y sus cuatro clases", text: "Cada ejemplo es una imagen de 16 × 16, de un canal en escala de grises, con valores de píxel entre 0 y 1. El generador varía la posición, el tamaño, el grosor y el ruido de cada figura. Las clases son cuadrado, cruz, diagonal y círculo. Como están balanceadas, una predicción aleatoria uniforme tendría una exactitud esperada cercana al 25 %." },
+      { title: "Tres divisiones de datos, tres funciones", text: "Entrenamiento usa 400 imágenes generadas para actualizar los pesos. Validación usa 120 imágenes distintas para observar el rendimiento sin modificar los pesos. Las 120 imágenes de prueba final se reservan hasta terminar el entrenamiento; se consultan como evaluación final, no para ajustar repetidamente el modelo." },
+      { title: "Arquitectura y dimensiones de tensores", text: "La CNN aplica Conv2d(1, 8, 3, padding=1), ReLU y max pooling de 2 × 2; después aplica Conv2d(8, 16, 3, padding=1), ReLU y otra reducción. El tamaño espacial cambia de 16 × 16 a 8 × 8 y luego a 4 × 4. Aplanar el resultado produce 16 × 4 × 4 = 256 características para una capa lineal que entrega cuatro logits, uno por clase." },
+      { title: "Cómo se actualiza la CNN", text: "Para cada minilote, el modelo calcula logits; CrossEntropyLoss los compara con las etiquetas; la retropropagación calcula gradientes y Adam actualiza los pesos. Una época recorre las 400 imágenes de entrenamiento en lotes de 32. CrossEntropyLoss recibe directamente los logits; softmax se aplica después para mostrar probabilidades por clase." },
+      { title: "Interfaz y evaluación cuidadosa", text: "Pulsa T para iniciar o pausar el entrenamiento; R para reiniciar; las flechas para recorrer imágenes; N para añadir ruido visual al ejemplo actual; E para revelar los resultados del conjunto de prueba reservado después de 25 épocas; y Esc para salir. El panel central muestra solo un canal de la primera convolución. Una exactitud alta en entrenamiento no demuestra por sí sola que el modelo generalice más allá de estas figuras sintéticas." }
+    ],
+    heroLabel: "Proyecto 1 · Redes neuronales · Piedra, papel o tijera", heroTitle: "¿Puede una red neuronal anticipar tu jugada?",
     heroText: "Observa una red neuronal pequeña mientras analiza las elecciones recientes, estima la siguiente y se actualiza con cada ronda.",
     visualLabel: "Una red neuronal transforma cinco jugadas anteriores en probabilidades para la siguiente", visualCaption: "5 jugadas recientes → 3 probabilidades estimadas",
     explore: "Explorar el modelo", getCode: "Obtener los archivos Python", goalLabel: "Objetivo de aprendizaje",
@@ -106,7 +130,7 @@ const copy = {
     goalText: "Explica cómo el juego codifica jugadas recientes, produce tres probabilidades, elige una contrajugada y entrena con la elección humana solo después de conocerla.",
     notebookLabel: "Cuaderno del estudiante", notebookTitle: "Una red neuronal aprende un patrón corto",
     notebookLead: "El modelo predice la siguiente jugada humana. Después, el juego aplica una regla independiente para escoger la jugada que vence a la opción más probable.",
-    contentsTitle: "Contenido de la página", codeLabel: "Proyecto ejecutable", codeTitle: "Ejecuta el arcade neuronal",
+    contentsTitle: "Contenido del proyecto", codeLabel: "Proyecto ejecutable", codeTitle: "Ejecuta el proyecto de piedra, papel o tijera",
     codeLead: "Descarga los dos archivos Python en una misma carpeta. Los comentarios explican los ajustes del modelo y los parámetros de las funciones en el idioma seleccionado.",
     setupTitle: "Instalación y ejecución", copy: "Copiar", download: "Descargar", copied: "Copiado.", copyFailed: "No se pudo copiar. Selecciona el código y cópialo.",
     loadError: "No se pudo cargar este archivo fuente.", checkLabel: "Comprueba tu comprensión",
@@ -218,6 +242,7 @@ const visualCopy = {
 let lang = localStorage.getItem("genai-language") || "en";
 const sourceFiles = { main: "main.py", neural: "neural.py" };
 let codeText = {};
+let arcadeCodeText = "";
 
 function renderVisual(type) {
   return visuals[type]?.(visualCopy[lang][type]) || "";
@@ -295,6 +320,41 @@ function renderSections() {
   document.querySelector("#classIndex").innerHTML = links.join("");
 }
 
+function renderArcade() {
+  const host = document.querySelector("#arcadeContent");
+  host.replaceChildren(...copy[lang].arcadeSections.map((section, index) => {
+    const article = document.createElement("article");
+    article.className = "arcade-theory";
+    const heading = document.createElement("h3");
+    heading.textContent = section.title;
+    const paragraph = document.createElement("p");
+    paragraph.textContent = section.text;
+    article.append(heading, paragraph);
+    if (index === 3) {
+      const architecture = document.createElement("div");
+      architecture.className = "cnn-shapes";
+      architecture.setAttribute("aria-label", lang === "es" ? "Dimensiones de las capas: 1 por 16 por 16, 8 por 16 por 16, 16 por 8 por 8, 16 por 4 por 4 y 4 salidas" : "Layer dimensions: 1 by 16 by 16, 8 by 16 by 16, 16 by 8 by 8, 16 by 4 by 4, and 4 outputs");
+      architecture.innerHTML = lang === "es"
+        ? "<span>1 × 16 × 16</span><b>→</b><span>8 × 16 × 16</span><b>→</b><span>16 × 8 × 8</span><b>→</b><span>16 × 4 × 4</span><b>→</b><span>4 logits</span>"
+        : "<span>1 × 16 × 16</span><b>→</b><span>8 × 16 × 16</span><b>→</b><span>16 × 8 × 8</span><b>→</b><span>16 × 4 × 4</span><b>→</b><span>4 logits</span>";
+      article.append(architecture);
+    }
+    return article;
+  }));
+  document.querySelector("#arcadeSetupCode").textContent = copy[lang].arcadeSetup;
+  document.querySelector("#downloadArcade").href = "../../assets/main_clase5.py";
+  document.querySelector("#arcadeSource").textContent = copy[lang].arcadeLoading;
+  document.querySelector("[data-copy=arcade]").disabled = true;
+  fetch(`../../assets/main_clase5.py?v=${VERSION}`).then((response) => {
+    if (!response.ok) throw new Error("main_clase5.py");
+    return response.text();
+  }).then((source) => {
+    arcadeCodeText = source;
+    document.querySelector("#arcadeSource").textContent = source;
+    document.querySelector("[data-copy=arcade]").disabled = false;
+  }).catch(() => { document.querySelector("#arcadeSource").textContent = copy[lang].arcadeLoadError; });
+}
+
 async function loadCode() {
   const requestedLang = lang;
   codeText = {};
@@ -330,17 +390,20 @@ function render() {
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", String(active));
   });
-  document.title = lang === "es" ? "¿Puede una red neuronal anticipar tu jugada? | IA Generativa" : "Can a Neural Network Predict Your Next Move? | Generative AI";
+  document.title = lang === "es" ? "Dos proyectos con redes neuronales | IA Generativa" : "Two Neural Network Projects | Generative AI";
   document.querySelector("#downloadMain").href = `code/${lang}/main.py`;
   document.querySelector("#downloadNeural").href = `code/${lang}/neural.py`;
   document.querySelectorAll("[data-copy=main], [data-copy=neural]").forEach((button) => { button.disabled = true; });
   document.querySelector("#setupCode").textContent = data.setupCode;
+  document.querySelector("#arcadeSetupStatus").textContent = "";
+  document.querySelector("#arcadeStatus").textContent = "";
   document.querySelector("#checkpointList").replaceChildren(...data.checks.map((item) => {
     const li = document.createElement("li");
     li.textContent = item;
     return li;
   }));
   renderSections();
+  renderArcade();
   loadCode().catch(() => {
     if (data !== copy[lang]) return;
     document.querySelector("#mainSource").textContent = data.loadError;
@@ -373,8 +436,9 @@ document.querySelectorAll("[data-lang]").forEach((button) => button.addEventList
 
 document.querySelectorAll("[data-copy]").forEach((button) => button.addEventListener("click", () => {
   const key = button.dataset.copy;
-  const text = key === "setup" ? copy[lang].setupCode : codeText[key];
-  const status = key === "setup" ? button.closest(".setup-panel").querySelector(".copy-status") : document.querySelector(`#${key}Status`);
+  const snippets = { setup: copy[lang].setupCode, arcadeSetup: copy[lang].arcadeSetup, arcade: arcadeCodeText };
+  const text = snippets[key] ?? codeText[key];
+  const status = key === "setup" || key === "arcadeSetup" ? button.closest(".setup-panel").querySelector(".copy-status") : document.querySelector(`#${key}Status`);
   copyText(text || "", status);
 }));
 

@@ -1,4 +1,4 @@
-const VERSION = "20261027-1";
+const VERSION = "20261027-2";
 
 const ui = {
   en: {
@@ -51,9 +51,9 @@ const ui = {
     class04Focus: "Convolutional neural networks and image features",
     class04Practice: "Explore filters, stride, padding, ReLU, pooling, and noise with Pixel.",
     classOpen04: "Open",
-    class05Title: "Can a neural network predict your next move?",
-    class05Focus: "Neural networks, supervised learning, and prediction",
-    class05Practice: "Play rock-paper-scissors and inspect probabilities, loss, and updates.",
+    class05Title: "Two neural-network projects",
+    class05Focus: "Supervised learning with a game and a CNN arcade",
+    class05Practice: "Predict rock-paper-scissors moves and train a CNN to classify shapes.",
     classOpen05: "Open",
     indexTitle: "Jump to",
     footerText: "Generative AI course notebook",
@@ -115,9 +115,9 @@ const ui = {
     class04Focus: "Redes neuronales convolucionales y características de imagen",
     class04Practice: "Explorar filtros, stride, padding, ReLU, pooling y ruido con Pixel.",
     classOpen04: "Abrir",
-    class05Title: "¿Puede una red neuronal anticipar tu jugada?",
-    class05Focus: "Redes neuronales, aprendizaje supervisado y predicción",
-    class05Practice: "Jugar piedra, papel o tijera y analizar probabilidades, pérdida y actualizaciones.",
+    class05Title: "Dos proyectos con redes neuronales",
+    class05Focus: "Aprendizaje supervisado con un juego y un arcade CNN",
+    class05Practice: "Predecir jugadas de piedra, papel o tijera y entrenar una CNN para clasificar figuras.",
     classOpen05: "Abrir",
     indexTitle: "Ir a",
     footerText: "Cuaderno del curso de IA Generativa",
